@@ -5,7 +5,7 @@ using UnityEngine;
 public class IdlseState : IState
 {
     private SpiderController spiderController;
-    private float idleDuration = 2f;
+    private float idleDuration = 120f;
     private float idleTimer;
 
     public StateType Type => StateType.Idle;
