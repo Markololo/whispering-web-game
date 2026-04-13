@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class IdlseState : IState
+{
+    private SpiderController spiderController;
+    private float idleDuration = 120f;
+    private float idleTimer;
+
+    public StateType Type => StateType.Idle;
+
+    public IdlseState(SpiderController spiderController)
+    {
+        this.spiderController = spiderController;
+    }
+
+    public void Enter()
+    {
+        idleTimer = 0f;
+        //aiController.Animator.SetBool("isMoving", false);
+    }
+
+    public void Execute()
+    {
+        idleTimer += Time.deltaTime;
+        if (idleTimer >= idleDuration)
+        {
+            spiderController.StateMachine.TransitionToState(StateType.Patrol);
+        }
+    }
+    public void Exit()
+    {
+    }
+}
+
