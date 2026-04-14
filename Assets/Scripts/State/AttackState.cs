@@ -32,7 +32,7 @@ public class AttackState : IState
         if (Time.time - lastAttackTime > attackCooldown)
         {
             lastAttackTime = Time.time;
-            spiderController.aiAnimationController.animator.SetTrigger("doAttack");
+            //spiderController.aiAnimationController.animator.SetTrigger("doAttack");
         }
     }
 
