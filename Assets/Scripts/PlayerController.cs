@@ -12,8 +12,12 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     public float speed = 10f;
     public float jumpHeight = 5f;
+    public float mouseSensitivity = 10f;
 
     private Vector2 moveValue;
+
+    private float xRotation = 0f;
+    private Vector2 lookValue;
     private CharacterController controller;
 
     
@@ -27,8 +31,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 move = new Vector3(moveValue.x, 0, moveValue.y);
+        //moving
+        Vector3 move = (transform.right * moveValue.x) + (transform.forward * moveValue.y);
         controller.Move(move * speed * Time.deltaTime);
+
+        //rotating/looking
+
+        float mouseX = lookValue.x * mouseSensitivity * Time.deltaTime;
+        float mouseY = lookValue.y * mouseSensitivity * Time.deltaTime;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        transform.localRotation=Quaternion.Euler(xRotation, 0f, 0f);
+        rb.transform.Rotate(Vector3.up * mouseX);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -39,8 +54,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        Vector2 lookValue = lookAction.ReadValue<Vector2>();
-        transform.Rotate(Vector3.up * lookValue.x * Time.deltaTime);
+        lookValue = context.ReadValue<Vector2>();
+        Debug.Log($"Look input = {lookValue}");
     }
 
     public void OnJump(InputAction.CallbackContext context)
