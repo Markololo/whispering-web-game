@@ -4,14 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class AIAnimationController : MonoBehaviour
 {
-    public Animator animator { get; private set; }
+    //public Animator animator { get; private set; }
     private SpiderController spiderController;
     private NavMeshAgent agent;
 
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         spiderController = GetComponent<SpiderController>();
         agent = GetComponent<NavMeshAgent>();
     }
@@ -25,7 +25,9 @@ public class AIAnimationController : MonoBehaviour
     void UpdateAnimations()
     {
         float speed = agent != null ? agent.velocity.magnitude : 0f;
-        animator.SetFloat("CharacterSpeed", speed);
+
+        //TODO: Uncomment animator code when added to project
+        //animator.SetFloat("CharacterSpeed", speed);
     }
 
     void HitPlayer() // Attack Animation Event to check if the player his hit
