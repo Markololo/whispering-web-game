@@ -34,6 +34,11 @@ public class OnButtonClick : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadSceneByIndex(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
