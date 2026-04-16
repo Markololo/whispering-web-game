@@ -1,54 +1,9 @@
 fileFormatVersion: 2
-guid: cc4d3afb8bab4e4459f811db33245f63
+guid: e1c1f922d23670e4fb0457c7a88de079
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: base_rock_face_03_diff_4k
-    second: {fileID: 2800000, guid: 004e104f191f00742bb30d1e81b21919, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: normal_rock_face_03_nor_gl_4k
-    second: {fileID: 2800000, guid: 6c8e728410dc0a84a804f6ff0af94ae9, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: rock_face_03_diff_4k
-    second: {fileID: 2800000, guid: 39bedfbe574967e4da87083a1215e24e, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: rock_face_03_nor_gl_4k
-    second: {fileID: 2800000, guid: d5a1fe8e0cc62b747819bef38232dc8a, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: rock_face_03_rough_4k
-    second: {fileID: 2800000, guid: cefe5f94d88c533428dc390346245f4d, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: rocks_ground_06_diff_4k
-    second: {fileID: 2800000, guid: b338e0c846618d14694ebfbd32be8e9c, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: rocks_ground_06_nor_gl_4k
-    second: {fileID: 2800000, guid: 65efb3840de8ffe4eb41989102f05ec7, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: rocks_ground_06_rough_4k
-    second: {fileID: 2800000, guid: ed768c503fdca8a43ad93637df35c1b0, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: rough_rock_face_03_rough_4k
-    second: {fileID: 2800000, guid: 5c3893259c3beb848a0e097392af2c00, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
