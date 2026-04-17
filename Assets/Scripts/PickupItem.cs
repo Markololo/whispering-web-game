@@ -7,6 +7,10 @@ public class PickupItem : MonoBehaviour
     public Vector3 heldLocalPosition = new Vector3(0.3f, -0.2f, 0.8f);
     public Vector3 heldLocalRotation = Vector3.zero;
 
+    public AudioClip dropItem;
+    public AudioClip pickItem;
+
+    private AudioSource source;
     private Rigidbody rb;
     private Collider col;
 
@@ -14,6 +18,7 @@ public class PickupItem : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
+        source = GetComponent<AudioSource>();
     }
 
     public GameObject PickUp(Transform holdPoint)
@@ -35,6 +40,8 @@ public class PickupItem : MonoBehaviour
         transform.localPosition = heldLocalPosition;
         transform.localRotation = Quaternion.Euler(heldLocalRotation);
 
+        source.clip = pickItem;
+        source.PlayOneShot(pickItem);
         return gameObject;
     }
 
@@ -42,6 +49,8 @@ public class PickupItem : MonoBehaviour
     {
         transform.SetParent(null);
         transform.position = dropPosition;
+        source.clip = dropItem;
+        source.PlayOneShot(dropItem);
 
         if (rb != null)
         {

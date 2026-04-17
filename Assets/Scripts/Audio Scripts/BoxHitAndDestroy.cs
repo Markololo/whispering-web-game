@@ -8,7 +8,7 @@ public class BoxHitAndDestroy : MonoBehaviour
     public AudioClip clip1;
     public AudioClip clip2;
 
-    public AudioClip playerBump;
+    //public AudioClip playerBump;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class BoxHitAndDestroy : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift)) //Change to player attack input and remove the or just for testing
         {
             source.clip = clip1;
-            source.PlayOneShot(clip1);
+            source.Play();
             source.clip = clip2;
             source.PlayOneShot(clip2);
             //Destroy(gameObject); IDK if it goes away or is just scattered
@@ -39,11 +39,5 @@ public class BoxHitAndDestroy : MonoBehaviour
             //Destroy(gameObject); IDK if it goes away or is just scattered
         }
 
-        if(collision.gameObject.tag == "Player") //Change to player tag
-        {
-            source.clip = playerBump;
-            source.PlayOneShot(playerBump);
-           
-        }
     }
 }
