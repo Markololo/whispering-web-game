@@ -28,6 +28,12 @@ public class IdlseState : IState
         {
             spiderController.StateMachine.TransitionToState(StateType.Patrol);
         }
+
+        if (spiderController.CanSeePlayer())
+        {
+            spiderController.StateMachine.TransitionToState(StateType.Chase);
+            return;
+        }
     }
     public void Exit()
     {

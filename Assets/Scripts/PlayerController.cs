@@ -10,18 +10,23 @@ public class PlayerController : MonoBehaviour
     InputAction lookAction;
 
     Rigidbody rb;
+
+    //* Movement Stats
     public float speed = 1f;
     public float jumpHeight = 5f;
     public float mouseSensitivity = 10f;
     public float groundCheckDistance = 1f;
-    public LayerMask layerMask;
     private Vector2 moveValue;
 
+    public LayerMask layerMask;
+
+    //* Looking Stats
     private float xRotation = 0f;
     private float yRotation = 0f;
     
     private Vector2 lookValue;
 
+    //* Check for if the player is grounded, used for jumping mechanics
     public bool IsGrounded =>
     Physics.Raycast(transform.position + Vector3.up * 0.01f, Vector3.down, groundCheckDistance, layerMask);
 
@@ -49,7 +54,8 @@ public class PlayerController : MonoBehaviour
         transform.localRotation=Quaternion.Euler(0f, yRotation, 0f);
         rb.transform.Rotate(Vector3.up * mouseX);
     }
-
+    
+    //* Unity Input System functions
     public void OnMove(InputAction.CallbackContext context)
     {
         moveValue = context.ReadValue<Vector2>();

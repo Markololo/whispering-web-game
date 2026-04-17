@@ -7,6 +7,9 @@ public class PatrolState : IState
     private int currentWaypointIndex = 0;
     private bool isWaiting = false;
 
+    public float patrolDuration = 120f;
+    private float patrolTime;
+
     public StateType Type => StateType.Patrol;
 
     public PatrolState(SpiderController spiderController)
@@ -16,6 +19,7 @@ public class PatrolState : IState
 
     public void Enter()
     {
+        patrolTime = 0f;
         spiderController.Agent.isStopped = false;
         MoveToNextWaypoint();
     }
@@ -31,6 +35,12 @@ public class PatrolState : IState
         if (!isWaiting && !spiderController.Agent.pathPending && spiderController.Agent.remainingDistance <= spiderController.Agent.stoppingDistance)
         {
             spiderController.StartCoroutine(WaitAndAnimate());
+        }
+
+        if (patrolTime >= patrolDuration)
+        {
+            MoveToNextWaypoint();
+            spiderController.StateMachine.TransitionToState(StateType.Idle);
         }
     }
 
