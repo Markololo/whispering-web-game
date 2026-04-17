@@ -146,6 +146,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &302777293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302777290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6fe9b0190bc0b45a181a3176bee58b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TarantulaAnimController
 --- !u!1001 &472608893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,11 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06d7678a2aba1624189e5804f3910d50, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -104.90985
+      value: -66.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06d7678a2aba1624189e5804f3910d50, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9374788
+      value: 8.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06d7678a2aba1624189e5804f3910d50, type: 3}
       propertyPath: m_LocalPosition.z
@@ -217,6 +229,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 06d7678a2aba1624189e5804f3910d50, type: 3}
       insertIndex: -1
       addedObject: {fileID: 302777291}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 06d7678a2aba1624189e5804f3910d50, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 302777293}
   m_SourcePrefab: {fileID: 100100000, guid: 06d7678a2aba1624189e5804f3910d50, type: 3}
 --- !u!4 &515128793 stripped
 Transform:
@@ -480,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 340247834bf154e4e99ad5047a26653b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 267ca5268409f46419c0ea958393152b, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
