@@ -25,9 +25,7 @@ public class PlayerMoveScript : MonoBehaviour
         hosrizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-
-        bool isWaliking  = hosrizontalInput != 0 || verticalInput != 0;
-        if (isWaliking)
+       if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             if (source.isPlaying == false)
             {
@@ -35,10 +33,23 @@ public class PlayerMoveScript : MonoBehaviour
                 source.Play();
             }
         }
-       else
+       //else
+       // {
+       //     source.Stop();
+       // }
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow))
         {
-            source.Stop();
+            if (source.isPlaying == false)
+            {  
+                source.clip = walk;
+                source.Play();
+            }
         }
+        //else
+        //{
+        //    source.Stop();
+        //}
+
 
         //if(Input.GetKeyDown(KeyCode.W))
         //{
