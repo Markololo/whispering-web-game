@@ -21,7 +21,7 @@ public class BoxHitAndDestroy : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift)) //Change to player attack input and remove the or just for testing
         {
             source.clip = clip1;
-            source.Play();
+            source.PlayOneShot(clip1);
             source.clip = clip2;
             source.PlayOneShot(clip2);
             //Destroy(gameObject); IDK if it goes away or is just scattered

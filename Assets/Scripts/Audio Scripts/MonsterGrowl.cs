@@ -21,7 +21,7 @@ public class MonsterGrowl : MonoBehaviour
 
     private IEnumerator MonsterGrowlPeriodically()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
         {
             source.clip = audioClip;
             source.PlayOneShot(audioClip);
