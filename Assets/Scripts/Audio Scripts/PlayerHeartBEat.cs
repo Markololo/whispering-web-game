@@ -6,7 +6,7 @@ public class PlayerHeartBEat : MonoBehaviour
 {
     private AudioSource source;
     public AudioClip heartBeat;
-    public float interval = 10f;
+    public float interval = 3f;
     // Start is called before the first frame update
     void Start()
     {
