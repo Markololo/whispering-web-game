@@ -8,7 +8,7 @@ public class BoxHitAndDestroy : MonoBehaviour
     public AudioClip clip1;
     public AudioClip clip2;
 
-    public AudioClip playerBump;
+    //public AudioClip playerBump;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +39,5 @@ public class BoxHitAndDestroy : MonoBehaviour
             //Destroy(gameObject); IDK if it goes away or is just scattered
         }
 
-        if(collision.gameObject.tag == "Player") //Change to player tag
-        {
-            source.clip = playerBump;
-            source.PlayOneShot(playerBump);
-           
-        }
     }
 }

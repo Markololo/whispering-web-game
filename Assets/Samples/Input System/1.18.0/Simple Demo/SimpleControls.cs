@@ -96,7 +96,7 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
                     ""name"": ""fire"",
                     ""type"": ""Button"",
                     ""id"": ""1077f913-a9f9-41b1-acb3-b9ee0adbc744"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Tap,SlowTap"",
                     ""initialStateCheck"": false
@@ -118,24 +118,6 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Interact"",
-                    ""type"": ""Button"",
-                    ""id"": ""82926959-8004-48aa-a35b-8dd8e2a23306"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Attack"",
-                    ""type"": ""Button"",
-                    ""id"": ""d1e9001b-5f0c-49fd-969c-e77d335a26fd"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -237,28 +219,6 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
                     ""action"": ""look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""507c1fbf-5be4-448b-859e-0ef3345cece8"",
-                    ""path"": ""<Keyboard>/#(E)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a9950066-518b-455f-9140-769792e8e2b5"",
-                    ""path"": ""<Keyboard>/#(F)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -270,8 +230,6 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
         m_gameplay_fire = m_gameplay.FindAction("fire", throwIfNotFound: true);
         m_gameplay_move = m_gameplay.FindAction("move", throwIfNotFound: true);
         m_gameplay_look = m_gameplay.FindAction("look", throwIfNotFound: true);
-        m_gameplay_Interact = m_gameplay.FindAction("Interact", throwIfNotFound: true);
-        m_gameplay_Attack = m_gameplay.FindAction("Attack", throwIfNotFound: true);
     }
 
     ~@SimpleControls()
@@ -355,8 +313,6 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_fire;
     private readonly InputAction m_gameplay_move;
     private readonly InputAction m_gameplay_look;
-    private readonly InputAction m_gameplay_Interact;
-    private readonly InputAction m_gameplay_Attack;
     /// <summary>
     /// Provides access to input actions defined in input action map "gameplay".
     /// </summary>
@@ -380,14 +336,6 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "gameplay/look".
         /// </summary>
         public InputAction @look => m_Wrapper.m_gameplay_look;
-        /// <summary>
-        /// Provides access to the underlying input action "gameplay/Interact".
-        /// </summary>
-        public InputAction @Interact => m_Wrapper.m_gameplay_Interact;
-        /// <summary>
-        /// Provides access to the underlying input action "gameplay/Attack".
-        /// </summary>
-        public InputAction @Attack => m_Wrapper.m_gameplay_Attack;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -423,12 +371,6 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
             @look.started += instance.OnLook;
             @look.performed += instance.OnLook;
             @look.canceled += instance.OnLook;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
-            @Attack.started += instance.OnAttack;
-            @Attack.performed += instance.OnAttack;
-            @Attack.canceled += instance.OnAttack;
         }
 
         /// <summary>
@@ -449,12 +391,6 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
             @look.started -= instance.OnLook;
             @look.performed -= instance.OnLook;
             @look.canceled -= instance.OnLook;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
-            @Attack.started -= instance.OnAttack;
-            @Attack.performed -= instance.OnAttack;
-            @Attack.canceled -= instance.OnAttack;
         }
 
         /// <summary>
@@ -516,19 +452,5 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLook(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnInteract(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Attack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnAttack(InputAction.CallbackContext context);
     }
 }

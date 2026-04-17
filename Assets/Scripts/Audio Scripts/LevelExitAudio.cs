@@ -17,20 +17,26 @@ public class LevelExitAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-    
-
-        if(collision.gameObject.tag == "Player") //Change to player tag
+        if (source != null)
         {
             source.clip = clip1;
-            source.PlayOneShot(clip1);
-            source.clip = clip2;
-            source.PlayOneShot(clip2);
-           
+            source.loop = true;
+            source.volume = 0.8f;
+            source.Play();
+        }
+
+        void OnCollisionEnter(Collision collision)
+        {
+
+
+            if (collision.gameObject.tag == "Player") //Change to player tag
+            {
+                source.clip = clip1;
+                source.PlayOneShot(clip1);
+                source.clip = clip2;
+                source.PlayOneShot(clip2);
+
+            }
         }
     }
 }
