@@ -8,48 +8,15 @@ public class PlayerMoveScript : MonoBehaviour
     //float jumpForce = 10f;
     public float hosrizontalInput;
     public float verticalInput;
-
-    private AudioSource source;
-    public AudioClip walk;
-    public AudioClip run;
-    public AudioClip jump;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        source = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         hosrizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-
-       if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            if (source.isPlaying == false)
-            {
-                source.clip = walk;
-                source.Play();
-            }
-        }
-       //else
-       // {
-       //     source.Stop();
-       // }
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow))
-        {
-            if (source.isPlaying == false)
-            {  
-                source.clip = walk;
-                source.Play();
-            }
-        }
-        //else
-        //{
-        //    source.Stop();
-        //}
-
 
         //if(Input.GetKeyDown(KeyCode.W))
         //{

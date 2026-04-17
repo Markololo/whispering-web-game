@@ -12,8 +12,6 @@ public class SimpleController_UsingState : MonoBehaviour
     private bool m_Firing;
     private float m_FireCooldown;
 
-  
-
     public void Update()
     {
         var gamepad = Gamepad.current;
@@ -45,7 +43,6 @@ public class SimpleController_UsingState : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
-       
         if (direction.sqrMagnitude < 0.01)
             return;
         var scaledMoveSpeed = moveSpeed * Time.deltaTime;
