@@ -1,4 +1,7 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 6e408de7009d5964ab8f786500666058
+=======
 guid: c36a3665a1f3fd549936756702704694
 MonoImporter:
   externalObjects: {}
@@ -9,3 +12,4 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+>>>>>>> c2bc64d5d27d1484ef33358f59b2db372b168a3c
