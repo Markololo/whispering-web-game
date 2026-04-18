@@ -2104,7 +2104,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c0d82f78b3ce17341940b3188fe9ce86, type: 3}
     - target: {fileID: 5262393324617237874, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
       propertyPath: speed
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5262393324617237874, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
       propertyPath: axeHit
