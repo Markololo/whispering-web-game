@@ -26,12 +26,14 @@ public class SpiderController : MonoBehaviour
     public float visionPersistence = 0.5f;
     private float lastSeenTime = -999f;
 
+    private AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
         Agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         aiAnimationController = GetComponent<AIAnimationController>();
-
+        source = GetComponent<AudioSource>();
         StateMachine = new StateMachine();
         StateMachine.AddState(new IdlseState(this));
         StateMachine.AddState(new PatrolState(this));
@@ -47,7 +49,7 @@ public class SpiderController : MonoBehaviour
         StateMachine.Update();
         currentState = StateMachine.GetCurrentStateType();
     }
-
+    public AudioClip spiderPresence;
     public bool CanSeePlayer()
     {
         if (Player == null)
@@ -87,13 +89,22 @@ public class SpiderController : MonoBehaviour
 
         // If recently seen, still count as visible
         bool recentlySeen = Time.time - lastSeenTime < visionPersistence;
-
+        if (recentlySeen)
+        {
+            source.clip = spiderPresence;
+            source.PlayOneShot(spiderPresence);
+        }
         return recentlySeen;
     }
-
+    public AudioClip spiderAttack;
     public bool IsPlayerInAttackRange()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
+        if(distanceToPlayer <= AttackRange)
+        {
+            source.clip = spiderAttack;
+            source.PlayOneShot(spiderAttack);
+        }
         return distanceToPlayer <= AttackRange;
     }
 
