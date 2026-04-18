@@ -23,7 +23,7 @@ public class PlayerBumps : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player") //Change to player tag
         {
-            source.clip = playerBump;
+            //source.clip = playerBump;
             source.PlayOneShot(playerBump);
 
         }
