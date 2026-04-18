@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
             if (hasKey)
             {
                 DoorAnimator.SetTrigger("Open");
+                hasKey = false;
                 //play open door sound here
             }
             else
