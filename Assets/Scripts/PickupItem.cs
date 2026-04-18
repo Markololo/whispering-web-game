@@ -10,6 +10,10 @@ public class PickupItem : MonoBehaviour
     public AudioClip dropItem;
     public AudioClip pickItem;
 
+    //* The items that are going to be equipped/enabled on the player
+    public GameObject pickaxe;
+    public GameObject helmet;
+    public GameObject player;
     private AudioSource source;
     private Rigidbody rb;
     private Collider col;
@@ -21,28 +25,29 @@ public class PickupItem : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
-    public GameObject PickUp(Transform holdPoint)
+    public void PickUp()
     {
-        if (rb != null)
-        {
-            rb.isKinematic = true;
-            rb.useGravity = false;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-        }
+        // if (rb != null)
+        // {
+        //     rb.isKinematic = true;
+        //     rb.useGravity = false;
+        //     rb.velocity = Vector3.zero;
+        //     rb.angularVelocity = Vector3.zero;
+        // }
 
-        if (col != null)
-        {
-            col.enabled = false;
-        }
+        // if (col != null)
+        // {
+        //     col.enabled = false;
+        // }
 
-        transform.SetParent(holdPoint);
-        transform.localPosition = heldLocalPosition;
-        transform.localRotation = Quaternion.Euler(heldLocalRotation);
+        // transform.SetParent(holdPoint);
+        // transform.localPosition = heldLocalPosition;
+        // transform.localRotation = Quaternion.Euler(heldLocalRotation);
 
-        source.clip = pickItem;
-        source.PlayOneShot(pickItem);
-        return gameObject;
+        // source.clip = pickItem;
+        // source.PlayOneShot(pickItem);
+        // return gameObject;
+        pickaxe.SetActive(true);
     }
 
     public void Drop(Vector3 dropPosition)
