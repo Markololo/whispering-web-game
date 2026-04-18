@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -42,8 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -212,6 +209,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -233,9 +235,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &204805541
 MeshFilter:
@@ -272,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
   m_AgentTypeID: 0
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
@@ -443,6 +448,69 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4013275331872712965, guid: e1c1f922d23670e4fb0457c7a88de079, type: 3}
+--- !u!1001 &752959812
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.3657656
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3724566
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -25.251925
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.83952737
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5433174
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -65.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150164149530875588, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_Name
+      value: FinalA_Monter_Tarantula
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1150164149530875588, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 863614138}
+    - targetCorrespondingSourceObject: {fileID: 1150164149530875588, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 863614139}
+  m_SourcePrefab: {fileID: 100100000, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
 --- !u!1001 &836126792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -509,6 +577,65 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 878408772}
   m_SourcePrefab: {fileID: 100100000, guid: 7b6db366560a95445ade74ef5e64f154, type: 3}
+--- !u!1 &863614132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1150164149530875588, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+  m_PrefabInstance: {fileID: 752959812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &863614138
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863614132}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &863614139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863614132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4909ea1e971bfec4bb64978e05bf054e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpiderController
+  Waypoints:
+  - {fileID: 1168776485}
+  - {fileID: 1063716389}
+  - {fileID: 473443754}
+  Player: {fileID: 1206900832673151835}
+  AttackRange: 2
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  currentState: 0
+  viewDistance: 10
+  viewAngle: 180
+  eyeHeight: 1
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  visionPersistence: 0.5
 --- !u!1 &878408768 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7b6db366560a95445ade74ef5e64f154, type: 3}
@@ -550,10 +677,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878408768}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -648,15 +775,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075610805}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 12
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -700,8 +826,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &1075610807
 Transform:
   m_ObjectHideFlags: 0
@@ -774,6 +904,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -795,9 +930,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1110920815
 MeshFilter:
@@ -901,15 +1038,15 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
-      propertyPath: Waypoints.Array.data[0]
+      propertyPath: 'Waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 139232742}
     - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
-      propertyPath: Waypoints.Array.data[1]
+      propertyPath: 'Waypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 1411385269}
     - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
-      propertyPath: Waypoints.Array.data[2]
+      propertyPath: 'Waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 393232250}
     - target: {fileID: 1977356494226095521, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
@@ -1042,6 +1179,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1063,9 +1205,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1554733403
 MeshFilter:
@@ -1147,6 +1291,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1168,9 +1317,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1628269920
 MeshFilter:
@@ -1202,7 +1353,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1641217917
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1216,6 +1367,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -1476,15 +1628,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1206900832673151835}
     - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
-      propertyPath: Waypoints.Array.data[0]
+      propertyPath: 'Waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 1168776485}
     - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
-      propertyPath: Waypoints.Array.data[1]
+      propertyPath: 'Waypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 1063716389}
     - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
-      propertyPath: Waypoints.Array.data[2]
+      propertyPath: 'Waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 473443754}
     - target: {fileID: 2490082783462506308, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
@@ -1531,6 +1683,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3K_Monter_Tarantula
       objectReference: {fileID: 0}
+    - target: {fileID: 3009914960674907646, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1558,3 +1714,4 @@ SceneRoots:
   - {fileID: 393232250}
   - {fileID: 1411385269}
   - {fileID: 4447687708403972672}
+  - {fileID: 752959812}
