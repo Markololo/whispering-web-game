@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public Animator PickaxeAnimator;
     public GameObject helmet;
     private bool hasKey;
+    public Animator DoorAnimator;
 
     public LayerMask layerMask;
 
@@ -111,6 +112,19 @@ public class PlayerController : MonoBehaviour
             PickaxeAnimator.SetTrigger("Swing");
             other.gameObject.SetActive(false);
             hasKey = true;
+        }
+
+        if (other.gameObject.tag == "Door")
+        {
+            if (hasKey)
+            {
+                DoorAnimator.SetTrigger("Open");
+                //play open door sound here
+            }
+            else
+            {
+                //play locked door sound here
+            }
         }
     }
 }

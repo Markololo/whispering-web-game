@@ -7,6 +7,7 @@ TagManager:
   - Helmet
   - Pickaxe
   - KeyBox
+  - Door
   layers:
   - Default
   - TransparentFX
