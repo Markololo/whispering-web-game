@@ -71,6 +71,8 @@ public class PlayerController : MonoBehaviour
     //* Unity Input System functions
     public void OnMove(InputAction.CallbackContext context)
     {
+        source.clip = footsteps;
+        source.Play();
         moveValue = context.ReadValue<Vector2>();
         //Debug.Log($"Move input = {moveValue}");
     }
