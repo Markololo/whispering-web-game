@@ -500,8 +500,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinalA_Monter_Tarantula
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5254095315952247116, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
