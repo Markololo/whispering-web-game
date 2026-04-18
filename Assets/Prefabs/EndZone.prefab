@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5090361398490805704}
   - component: {fileID: 4042945212582003625}
   - component: {fileID: 7317994808360659620}
-  - component: {fileID: 6110967132322087415}
   m_Layer: 0
   m_Name: EndZone
   m_TagString: Untagged
@@ -68,21 +67,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b02fff15637ee4aa781695e8993e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Level2
---- !u!114 &6110967132322087415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4060832020470127083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c36a3665a1f3fd549936756702704694, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip1: {fileID: 0}
-  clip2: {fileID: 0}
 --- !u!1 &8670054920146192948
 GameObject:
   m_ObjectHideFlags: 0
