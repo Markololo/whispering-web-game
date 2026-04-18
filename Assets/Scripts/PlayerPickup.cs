@@ -12,54 +12,55 @@ public class PlayerPickup : MonoBehaviour
     private GameObject heldItem;
     private bool isAttacking = false;
 
-  public void OnInteract(InputValue value)
-{
-    Debug.Log("Interact pressed");
-
-    if (playerCamera == null)
+    public void OnInteract(InputValue value)
     {
-        Debug.LogWarning("Player Camera is not assigned in PlayerPickup.");
-        return;
-    }
+        Debug.Log("Interact pressed");
 
-   
-    if (heldItem != null)
-    {
-        PickupItem heldPickup = heldItem.GetComponent<PickupItem>();
-        if (heldPickup != null)
+        if (playerCamera == null)
         {
-            Vector3 dropPos = playerCamera.transform.position 
-                            + playerCamera.transform.forward * 1.2f 
-                            + Vector3.up * 0.3f;
-
-            heldPickup.Drop(dropPos);
+            Debug.LogWarning("Player Camera is not assigned in PlayerPickup.");
+            return;
         }
 
-        heldItem = null;
-        return; 
-    }
 
-    
-    Vector3 direction = playerCamera.transform.forward + Vector3.down * 0.5f;
-    Ray ray = new Ray(playerCamera.transform.position, direction.normalized);
-    RaycastHit hit;
-
-    if (Physics.SphereCast(ray, 0.3f, out hit, pickupRange))
-    {
-        Debug.Log("Hit object: " + hit.collider.gameObject.name);
-
-        PickupItem pickup = hit.collider.GetComponentInParent<PickupItem>();
-        if (pickup != null)
+        if (heldItem != null)
         {
-            heldItem = pickup.PickUp(holdPoint);
-            Debug.Log("Picked up: " + pickup.itemName);
+            PickupItem heldPickup = heldItem.GetComponent<PickupItem>();
+            if (heldPickup != null)
+            {
+                Vector3 dropPos = playerCamera.transform.position
+                                + playerCamera.transform.forward * 1.2f
+                                + Vector3.up * 0.3f;
+
+                heldPickup.Drop(dropPos);
+            }
+
+            heldItem = null;
+            return;
+        }
+
+
+        Vector3 direction = playerCamera.transform.forward + Vector3.down * 0.5f;
+        Ray ray = new Ray(playerCamera.transform.position, direction.normalized);
+        RaycastHit hit;
+
+        if (Physics.SphereCast(ray, 0.3f, out hit, pickupRange))
+        {
+            Debug.Log("Hit object: " + hit.collider.gameObject.name);
+
+            PickupItem pickup = hit.collider.GetComponentInParent<PickupItem>();
+            if (pickup != null)
+            {
+                // heldItem = pickup.PickUp(holdPoint);
+                // heldItem = pickup.PickUp();
+                Debug.Log("Picked up: " + pickup.itemName);
+            }
+        }
+        else
+        {
+            Debug.Log("Nothing hit");
         }
     }
-    else
-    {
-        Debug.Log("Nothing hit");
-    }
-}
 
     public void OnAttack(InputValue value)
     {
@@ -83,7 +84,7 @@ public class PlayerPickup : MonoBehaviour
         Quaternion startRot = heldItem.transform.localRotation;
 
         Vector3 attackPos = startPos + new Vector3(0.2f, -0.2f, 0.2f);
-      Quaternion attackRot = startRot * Quaternion.Euler(-70f, 0f, 0f);
+        Quaternion attackRot = startRot * Quaternion.Euler(-70f, 0f, 0f);
 
         float time = 0f;
         float duration = 0.12f;

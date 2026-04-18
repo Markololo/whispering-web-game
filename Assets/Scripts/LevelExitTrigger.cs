@@ -9,7 +9,10 @@ public class LevelExitTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(nextSceneName);
+            // SceneManager.LoadScene(nextSceneName);
+            int currentSceneIdx = SceneManager.GetActiveScene().buildIndex;
+
+            SceneManager.LoadScene(currentSceneIdx + 1);
         }
     }
 }

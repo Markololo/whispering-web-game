@@ -18,12 +18,18 @@ public class PlayerController : MonoBehaviour
     public float groundCheckDistance = 1f;
     private Vector2 moveValue;
 
+    //*item fields
+    public GameObject pickaxe;
+    public Animator PickaxeAnimator;
+    public GameObject helmet;
+    private bool hasKey;
+
     public LayerMask layerMask;
 
     //* Looking Stats
     private float xRotation = 0f;
     private float yRotation = 0f;
-    
+
     private Vector2 lookValue;
 
     //* Check for if the player is grounded, used for jumping mechanics
@@ -34,6 +40,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        pickaxe.SetActive(false);
+        helmet.SetActive(false);
+        hasKey = false;
     }
 
     // Update is called once per frame
@@ -42,7 +51,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(transform.forward * moveValue.y);
         Vector3 move = (transform.right * moveValue.x) + (transform.forward * moveValue.y);
         //Debug.Log(move);
-        rb.velocity = new Vector3(move.x * speed , rb.velocity.y, move.z * speed);
+        rb.velocity = new Vector3(move.x * speed, rb.velocity.y, move.z * speed);
         //controller.Move(move * speed * Time.deltaTime);
 
         //rotating/looking
@@ -51,10 +60,10 @@ public class PlayerController : MonoBehaviour
         float mouseY = lookValue.y * mouseSensitivity * Time.deltaTime;
 
         yRotation += mouseX;
-        transform.localRotation=Quaternion.Euler(0f, yRotation, 0f);
+        transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
         rb.transform.Rotate(Vector3.up * mouseX);
     }
-    
+
     //* Unity Input System functions
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -74,12 +83,34 @@ public class PlayerController : MonoBehaviour
         if (context.performed && IsGrounded)
         {
             Debug.Log("We should jump");
-            rb.AddForce(new Vector3(0,jumpHeight,0), ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
         }
     }
 
     private void FixedUpdate()
     {
-        
+
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Pickaxe")
+        {
+            pickaxe.SetActive(true);
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.gameObject.tag == "Helmet")
+        {
+            helmet.SetActive(true);
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.gameObject.tag == "KeyBox")
+        {
+            PickaxeAnimator.SetTrigger("Swing");
+            other.gameObject.SetActive(false);
+            hasKey = true;
+        }
     }
 }
