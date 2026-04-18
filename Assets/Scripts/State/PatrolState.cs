@@ -7,7 +7,7 @@ public class PatrolState : IState
     private int currentWaypointIndex = 0;
     private bool isWaiting = false;
 
-    public float patrolDuration = 120f;
+    public float patrolDuration = 40f;
     private float patrolTime;
 
     public StateType Type => StateType.Patrol;
@@ -42,6 +42,7 @@ public class PatrolState : IState
             MoveToNextWaypoint();
             spiderController.StateMachine.TransitionToState(StateType.Idle);
         }
+        patrolTime += Time.deltaTime;
     }
 
     public void Exit()

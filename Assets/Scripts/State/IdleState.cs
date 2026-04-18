@@ -19,6 +19,7 @@ public class IdlseState : IState
     {
         idleTimer = 0f;
         //aiController.Animator.SetBool("isMoving", false);
+        spiderController.Agent.isStopped = true;
     }
 
     public void Execute()

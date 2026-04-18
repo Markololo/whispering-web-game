@@ -13,7 +13,7 @@ public class ChaseState : IState
 
     public void Enter()
     {
-        // No animations, so no need to set any animator parameters
+        spiderController.Agent.isStopped = false;
     }
 
     public void Execute()
