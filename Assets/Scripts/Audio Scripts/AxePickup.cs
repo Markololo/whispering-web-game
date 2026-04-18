@@ -25,4 +25,6 @@ public class AxePickup : MonoBehaviour
             source.PlayOneShot(clip);
         }
     }
+
+   
 }

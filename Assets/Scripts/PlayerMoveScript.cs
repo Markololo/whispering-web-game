@@ -8,9 +8,13 @@ public class PlayerMoveScript : MonoBehaviour
     //float jumpForce = 10f;
     public float hosrizontalInput;
     public float verticalInput;
+
+    public AudioClip footsteps;
+    private AudioSource source;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -18,6 +22,12 @@ public class PlayerMoveScript : MonoBehaviour
         hosrizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
+        bool walk = hosrizontalInput != 0 || verticalInput != 0;
+        if(walk)
+        {
+            source.clip = footsteps;
+            source.Play();
+        }
         //if(Input.GetKeyDown(KeyCode.W))
         //{
         //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);

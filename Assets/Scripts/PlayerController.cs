@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 lookValue;
 
+    private AudioSource source;
+    public AudioClip footsteps;
     //* Check for if the player is grounded, used for jumping mechanics
     public bool IsGrounded =>
     Physics.Raycast(transform.position + Vector3.up * 0.01f, Vector3.down, groundCheckDistance, layerMask);
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        source = GetComponent<AudioSource>();
         pickaxe.SetActive(false);
         helmet.SetActive(false);
         hasKey = false;
@@ -77,13 +80,14 @@ public class PlayerController : MonoBehaviour
         lookValue = context.ReadValue<Vector2>();
         //Debug.Log($"Look input = {lookValue}");
     }
-
+    public AudioClip jump;
     public void OnJump(InputAction.CallbackContext context)
     {
         Debug.Log($"Jumping {context.performed} - Is Grounded: {IsGrounded}");
         if (context.performed && IsGrounded)
         {
             Debug.Log("We should jump");
+            source.PlayOneShot(jump);
             rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
         }
     }
@@ -93,25 +97,49 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public AudioClip pickAxe;
+    public AudioClip axeHit;
+    public AudioClip pickHelmet;
+    public AudioClip pickKey;
+    public AudioClip destroyBox;
+    public AudioClip openDoor;
+    public AudioClip doorClosed;
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Pickaxe")
         {
             pickaxe.SetActive(true);
+            source.clip = pickAxe;
+            source.PlayOneShot(pickAxe);
             other.gameObject.SetActive(false);
         }
 
         if (other.gameObject.tag == "Helmet")
         {
             helmet.SetActive(true);
+            source.clip = pickHelmet;
+            source.PlayOneShot(pickHelmet);
             other.gameObject.SetActive(false);
         }
 
         if (other.gameObject.tag == "KeyBox")
         {
             PickaxeAnimator.SetTrigger("Swing");
+            source.clip = axeHit;
+            source.PlayOneShot(axeHit);
+            source.clip = destroyBox;
+            source.PlayOneShot(destroyBox);
             other.gameObject.SetActive(false);
             hasKey = true;
+        }
+
+        if (other.gameObject.tag == "Walls")
+        {
+           
+            source.clip = doorClosed;
+            source.PlayOneShot(doorClosed);
+           
         }
 
         if (other.gameObject.tag == "Door")
@@ -119,11 +147,15 @@ public class PlayerController : MonoBehaviour
             if (hasKey)
             {
                 DoorAnimator.SetTrigger("Open");
+                source.clip = openDoor;
+                source.PlayOneShot(openDoor);
                 hasKey = false;
                 //play open door sound here
             }
             else
             {
+                source.clip = doorClosed;
+                source.PlayOneShot(doorClosed);
                 //play locked door sound here
             }
         }
