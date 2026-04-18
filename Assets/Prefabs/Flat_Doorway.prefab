@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 6663723443296570737}
   - component: {fileID: 6664891872261762936}
   - component: {fileID: 8888894735581023066}
+  - component: {fileID: 6482753905002427373}
   m_Layer: 0
   m_Name: Flat_Doorway
   m_TagString: Door
@@ -161,6 +162,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4784227563904562325, guid: 761f086b8ea3d3b498c848051eb930a8, type: 3}
+--- !u!65 &6482753905002427373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2793038627757097076}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.000585, y: 2.0035768, z: 0.23521972}
+  m_Center: {x: 0.12354779, y: -0.103792876, z: -0.00059974194}
 --- !u!1 &4388405775522496581
 GameObject:
   m_ObjectHideFlags: 0
