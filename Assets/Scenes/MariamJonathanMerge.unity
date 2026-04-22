@@ -923,6 +923,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 774169371627461664, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1206900832673151835}
+    - target: {fileID: 774169371627461664, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: Waypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1150164149530875588, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
       propertyPath: m_Name
       value: FinalA_Monter_Tarantula

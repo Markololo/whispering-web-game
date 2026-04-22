@@ -127,6 +127,269 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8031892254331471669, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
   m_PrefabInstance: {fileID: 15376990747169191}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &125218786
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.2603
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.2603
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.2603
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.495
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.7713
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -102.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.83952737
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5433174
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -65.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 341680521062714494, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 774169371627461664, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1206900832673151835}
+    - target: {fileID: 774169371627461664, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: spiderAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ed0834a0e4f13f43935ec633f81cd07, type: 3}
+    - target: {fileID: 774169371627461664, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: spiderPresence
+      value: 
+      objectReference: {fileID: 8300000, guid: aebabe3b2139bed489c2fa7e27df2516, type: 3}
+    - target: {fileID: 774169371627461664, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: Waypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 774169371627461664, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: Waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 139232742}
+    - target: {fileID: 774169371627461664, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: Waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 393232250}
+    - target: {fileID: 774169371627461664, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: Waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1411385269}
+    - target: {fileID: 1150164149530875588, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      propertyPath: m_Name
+      value: FinalA_Monter_Tarantula (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1150164149530875588, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 125218790}
+    - targetCorrespondingSourceObject: {fileID: 1150164149530875588, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 125218789}
+    - targetCorrespondingSourceObject: {fileID: 1150164149530875588, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 125218788}
+  m_SourcePrefab: {fileID: 100100000, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+--- !u!1 &125218787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1150164149530875588, guid: 8a5553078a1c6b7408d4d5d4885d29d0, type: 3}
+  m_PrefabInstance: {fileID: 125218786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &125218788
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125218787}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &125218789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125218787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4909ea1e971bfec4bb64978e05bf054e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpiderController
+  Waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Player: {fileID: 0}
+  AttackRange: 2
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  currentState: 0
+  viewDistance: 10
+  viewAngle: 180
+  eyeHeight: 1
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  visionPersistence: 0.5
+  spiderPresence: {fileID: 8300000, guid: aebabe3b2139bed489c2fa7e27df2516, type: 3}
+  spiderAttack: {fileID: 8300000, guid: 7ed0834a0e4f13f43935ec633f81cd07, type: 3}
+--- !u!195 &125218790
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125218787}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &139232741
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,3 +2412,4 @@ SceneRoots:
   - {fileID: 4945902201230651347}
   - {fileID: 685810682}
   - {fileID: 505618298}
+  - {fileID: 125218786}
