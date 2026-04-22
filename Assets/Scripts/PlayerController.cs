@@ -22,13 +22,16 @@ public class PlayerController : MonoBehaviour
     public GameObject pickaxe;
     public Animator PickaxeAnimator;
     public GameObject helmet;
-    private bool hasKey;
-    public Animator DoorAnimator;
+    public bool hasKey { get; set; }
+    public bool hasPickAxe { get; set; }
+    public bool hasHelmet { get; set; }
+
+    // public Animator DoorAnimator;
 
     public LayerMask layerMask;
 
     //* Looking Stats
-    private float xRotation = 0f;
+    private float xRotation = 90f;
     private float yRotation = 0f;
 
     private Vector2 lookValue;
@@ -82,6 +85,7 @@ public class PlayerController : MonoBehaviour
         lookValue = context.ReadValue<Vector2>();
         //Debug.Log($"Look input = {lookValue}");
     }
+
     public AudioClip jump;
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -138,28 +142,10 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "Walls")
         {
-           
+
             source.clip = doorClosed;
             source.PlayOneShot(doorClosed);
-           
-        }
 
-        if (other.gameObject.tag == "Door")
-        {
-            if (hasKey)
-            {
-                DoorAnimator.SetTrigger("Open");
-                source.clip = openDoor;
-                source.PlayOneShot(openDoor);
-                hasKey = false;
-                //play open door sound here
-            }
-            else
-            {
-                source.clip = doorClosed;
-                source.PlayOneShot(doorClosed);
-                //play locked door sound here
-            }
         }
     }
 }
