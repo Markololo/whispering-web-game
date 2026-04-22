@@ -6,7 +6,6 @@ public class PatrolState : IState
     private SpiderController spiderController;
     private int currentWaypointIndex = 0;
     private bool isWaiting = false;
-    private bool isWalking = true;
     public float patrolDuration = 40f;
     private float patrolTime;
 
