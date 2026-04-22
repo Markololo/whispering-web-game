@@ -1348,6 +1348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flat_Doorway
       objectReference: {fileID: 0}
+    - target: {fileID: 5390283495669683025, guid: 28c4fb2d4ceac1840ab842b5922aed00, type: 3}
+      propertyPath: doorAnimator
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6867308084241766662, guid: 28c4fb2d4ceac1840ab842b5922aed00, type: 3}
       propertyPath: m_LocalScale.x
       value: 7.148213
@@ -1405,6 +1409,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2793038627757097076, guid: 28c4fb2d4ceac1840ab842b5922aed00, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1212850293}
     - targetCorrespondingSourceObject: {fileID: 1013856779129568488, guid: 28c4fb2d4ceac1840ab842b5922aed00, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1212850291}
@@ -1435,6 +1442,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1212850292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2793038627757097076, guid: 28c4fb2d4ceac1840ab842b5922aed00, type: 3}
+  m_PrefabInstance: {fileID: 1212850289}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1212850293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212850292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a9f12786fe861748a47313961adffe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorAnimator: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &1411385268
 GameObject:
   m_ObjectHideFlags: 0
