@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     //*item fields
     public GameObject pickaxe;
-    public Animator PickaxeAnimator;
+    // public Animator PickaxeAnimator;
     public GameObject helmet;
     public bool hasKey { get; set; }
     public bool hasPickAxe { get; set; }
@@ -129,16 +129,16 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
         }
 
-        if (other.gameObject.tag == "KeyBox")
-        {
-            PickaxeAnimator.SetTrigger("Swing");
-            source.clip = axeHit;
-            source.PlayOneShot(axeHit);
-            source.clip = destroyBox;
-            source.PlayOneShot(destroyBox);
-            other.gameObject.SetActive(false);
-            hasKey = true;
-        }
+        // if (other.gameObject.tag == "KeyBox")
+        // {
+        //     PickaxeAnimator.SetTrigger("Swing");
+        //     source.clip = axeHit;
+        //     source.PlayOneShot(axeHit);
+        //     source.clip = destroyBox;
+        //     source.PlayOneShot(destroyBox);
+        //     other.gameObject.SetActive(false);
+        //     hasKey = true;
+        // }
 
         if (other.gameObject.tag == "Walls")
         {

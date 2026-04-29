@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 7594561745576829808}
   - component: {fileID: 3065874483444327311}
   - component: {fileID: 6494809431296380483}
+  - component: {fileID: 6067306507361731279}
   m_Layer: 3
   m_Name: PlayerV3
   m_TagString: Player
@@ -529,7 +530,6 @@ MonoBehaviour:
   mouseSensitivity: 10
   groundCheckDistance: 2
   pickaxe: {fileID: 8962965714948280330}
-  PickaxeAnimator: {fileID: 3602351178673296352}
   helmet: {fileID: 4449926667124279603}
   layerMask:
     serializedVersion: 2
@@ -801,6 +801,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 115436304272104190}
+--- !u!114 &6067306507361731279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8031892254331471669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a8bb11fa6a8a346b2c793693daa223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8962965714948280330
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +827,7 @@ GameObject:
   - component: {fileID: 3602351178673296352}
   - component: {fileID: 9032429614727690631}
   - component: {fileID: 4169067031593557243}
+  - component: {fileID: 8080096647454697628}
   m_Layer: 0
   m_Name: PickPivot
   m_TagString: Untagged
@@ -943,6 +956,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.04, y: 39.5, z: 23.4}
   m_Center: {x: 0, y: -15.3, z: 0}
+--- !u!114 &8080096647454697628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8962965714948280330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a8bb11fa6a8a346b2c793693daa223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9034330768271726139
 GameObject:
   m_ObjectHideFlags: 0

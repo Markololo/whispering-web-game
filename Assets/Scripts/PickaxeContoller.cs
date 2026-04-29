@@ -43,11 +43,11 @@ public class PickaxeContoller : MonoBehaviour
     {
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collider other)
     {
         if (other.gameObject.tag == "Breakable")
         {
-
+            other.gameObject.SetActive(false);
         }
     }
 }

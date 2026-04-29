@@ -55,12 +55,12 @@ public class DoorController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Player touched the door");
-            if (playerHasKey)
+            if (PlayerItems.hasKey)
             {
                 doorAnimator.SetTrigger("Open");
                 // source.clip = openDoor;
                 // source.PlayOneShot(openDoor);s
-                playerController.hasKey = false;
+                PlayerItems.hasKey = false;
                 //play open door sound here
             }
             else
