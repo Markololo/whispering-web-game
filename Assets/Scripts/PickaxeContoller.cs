@@ -9,7 +9,7 @@ public class PickaxeContoller : MonoBehaviour
     private bool isActive;
     private bool isSwinging;
     private Animator animator;
-    private Collider trigger;
+    private BoxCollider collider;
     public AudioClip axeHit;
     private AudioSource source;
 
@@ -18,7 +18,7 @@ public class PickaxeContoller : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        trigger = GetComponent<Collider>();
+        collider = GetComponent<BoxCollider>();
         source = GetComponent<AudioSource>();
     }
 
@@ -28,14 +28,14 @@ public class PickaxeContoller : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             animator.SetBool("isSwinging", true);
-            trigger.isTrigger = true;
+            collider.enabled = true;
             source.clip = axeHit;
             source.PlayOneShot(axeHit);
         }
         else
         {
             animator.SetBool("isSwinging", false);
-            trigger.isTrigger = false;
+            collider.enabled = true;
         }
     }
 
@@ -45,9 +45,9 @@ public class PickaxeContoller : MonoBehaviour
 
     private void OnCollisionEnter(Collider other)
     {
-        if (other.gameObject.tag == "Breakable")
-        {
-            other.gameObject.SetActive(false);
-        }
+        // if (other.gameObject.tag == "Breakable")
+        // {
+        //     other.gameObject.SetActive(false);
+        // }
     }
 }
