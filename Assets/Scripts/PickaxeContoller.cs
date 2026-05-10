@@ -45,9 +45,11 @@ public class PickaxeContoller : MonoBehaviour
 
     private void OnCollisionEnter(Collider other)
     {
-        // if (other.gameObject.tag == "Breakable")
-        // {
-        //     other.gameObject.SetActive(false);
-        // }
+        Breakable target = other.gameObject.GetComponent<Breakable>();
+
+        if (target != null)
+        {
+            target.Break(collision.contacts[0].points);
+        }
     }
 }

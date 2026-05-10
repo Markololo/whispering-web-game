@@ -34,17 +34,4 @@ public class Breakable : MonoBehaviour
 
         Destroy(gameObject);
     }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        print("In Collision");
-        if (other.gameObject.tag == "Pickaxe")
-        {
-            print("Got Hit");
-            ContactPoint contactPoint = other.contacts[0];
-
-            Vector3 position = contactPoint.point;
-            Break(position);
-        }
-    }
 }
