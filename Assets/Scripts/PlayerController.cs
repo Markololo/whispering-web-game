@@ -129,16 +129,26 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
         }
 
-        // if (other.gameObject.tag == "KeyBox")
-        // {
-        //     PickaxeAnimator.SetTrigger("Swing");
-        //     source.clip = axeHit;
-        //     source.PlayOneShot(axeHit);
-        //     source.clip = destroyBox;
-        //     source.PlayOneShot(destroyBox);
-        //     other.gameObject.SetActive(false);
-        //     hasKey = true;
-        // }
+        if (other.gameObject.tag == "Breakable")
+        {
+            // PickaxeAnimator.SetTrigger("Swing");
+            // source.clip = axeHit;
+            // source.PlayOneShot(axeHit);
+            // source.clip = destroyBox;
+            // source.PlayOneShot(destroyBox);
+            // other.gameObject.SetActive(false);
+            if (other.gameObject.tag == "Breakable")
+            {
+                Debug.Log("Hit a breakable");
+                Breakable target = other.gameObject.GetComponent<Breakable>();
+
+                if (target != null)
+                {
+                    target.Break(other.contacts[0].point);
+                }
+            }
+            hasKey = true;
+        }
 
         if (other.gameObject.tag == "Walls")
         {

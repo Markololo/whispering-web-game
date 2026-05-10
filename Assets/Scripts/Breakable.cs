@@ -34,4 +34,19 @@ public class Breakable : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("We Collisioning");
+        if (other.gameObject.tag == "pickaxe")
+        {
+            Debug.Log("Hit a breakable");
+            Breakable target = other.gameObject.GetComponent<Breakable>();
+
+            if (target != null)
+            {
+                target.Break(other.contacts[0].point);
+            }
+        }
+    }
 }

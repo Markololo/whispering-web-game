@@ -6,36 +6,39 @@ using UnityEngine.InputSystem;
 
 public class PickaxeContoller : MonoBehaviour
 {
-    private bool isActive;
-    private bool isSwinging;
-    private Animator animator;
-    private BoxCollider collider;
+    public bool isActive;
+    public bool isSwinging;
+    public Animator animator;
+    public BoxCollider collider;
     public AudioClip axeHit;
-    private AudioSource source;
+    // public AudioSource source;
 
-
+    public GameObject tryingToCollide;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        collider = GetComponent<BoxCollider>();
-        source = GetComponent<AudioSource>();
+        this.animator = GetComponent<Animator>();
+        this.collider = GetComponent<BoxCollider>();
+        // this.source = GetComponent<AudioSource>();
+        // tryingToCollide = GetComponent<>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             animator.SetBool("isSwinging", true);
             collider.enabled = true;
-            source.clip = axeHit;
-            source.PlayOneShot(axeHit);
+            // source.clip = axeHit;
+            // source.PlayOneShot(axeHit);
+            // tryingToCollide.enabled = true;
         }
         else
         {
             animator.SetBool("isSwinging", false);
-            collider.enabled = true;
+            collider.enabled = false;
+            // tryingToCollide.enabled = false;
         }
     }
 
@@ -43,13 +46,18 @@ public class PickaxeContoller : MonoBehaviour
     {
     }
 
-    private void OnCollisionEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        Breakable target = other.gameObject.GetComponent<Breakable>();
-
-        if (target != null)
+        Debug.Log("We Collisioning");
+        if (other.gameObject.tag == "Breakable")
         {
-            target.Break(collision.contacts[0].points);
+            Debug.Log("Hit a breakable");
+            Breakable target = other.gameObject.GetComponent<Breakable>();
+
+            if (target != null)
+            {
+                target.Break(other.contacts[0].point);
+            }
         }
     }
 }
