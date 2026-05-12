@@ -8,20 +8,23 @@ public class DoorController : MonoBehaviour
     // public GameObject player;
     public Animator doorAnimator;
 
-    public PlayerController playerController;
+    // public PlayerController playerController;
+    private GameObject player;
 
     private bool playerHasKey;
     // Start is called before the first frame update
+    private PlayerController playerController;
     void Start()
     {
-        playerHasKey = playerController.hasKey;
-
+        // playerHasKey = playerController.hasKey;
+        player = GameObject.FindWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+        Debug.Log(player.name);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(playerHasKey);
     }
 
     // void OnCollisionEnter(Collision other)
@@ -52,6 +55,7 @@ public class DoorController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         playerHasKey = playerController.hasKey;
+
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Player touched the door");
@@ -59,8 +63,8 @@ public class DoorController : MonoBehaviour
             {
                 doorAnimator.SetTrigger("Open");
                 // source.clip = openDoor;
-                // source.PlayOneShot(openDoor);s
-                playerController.hasKey = false;
+                // source.PlayOneShot(openDoor);
+                playerHasKey = false;
                 //play open door sound here
             }
             else
