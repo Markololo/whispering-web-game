@@ -11,42 +11,51 @@ public class Breakable : MonoBehaviour
 
     private bool broken = false;
 
-    public void Break(Vector3 hitPosition)
+    public void Break()
     {
-        if (broken) return;
-        broken = true;
-        // we find this to
-        Vector3 explosionOrigin = transform.position - hitPosition.normalized * 0.5f;
+        // if (broken) return;
+        // broken = true;
+        // // we find this to
+        // Vector3 explosionOrigin = transform.position - hitPosition.normalized * 0.5f;
 
-        foreach (Transform child in transform)
-        {
-            Rigidbody rb = child.GetComponent<Rigidbody>();
-            if (rb == null) continue;
+        // foreach (Transform child in transform)
+        // {
+        //     Rigidbody rb = child.GetComponent<Rigidbody>();
+        //     if (rb == null) continue;
 
-            child.SetParent(null);
-            rb.isKinematic = false;
-            rb.AddExplosionForce(explosionForce, explosionOrigin, explosionRadius, upwardModifier, ForceMode.Impulse);
+        //     child.SetParent(null);
+        //     rb.isKinematic = false;
+        //     rb.AddExplosionForce(explosionForce, explosionOrigin, explosionRadius, upwardModifier, ForceMode.Impulse);
 
 
-            if (chunkLifetime > 0f)
-                Destroy(child.gameObject, chunkLifetime);
-        }
+        //     if (chunkLifetime > 0f)
+        //         Destroy(child.gameObject, chunkLifetime);
+        // }
+        Animator animator = GetComponent<Animator>();
 
+        animator.SetTrigger("Break");
+
+        StartCoroutine(DelayedCall(1.5f));
+    }
+
+    IEnumerator DelayedCall(float time)
+    {
+        yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("We Collisioning");
-        if (other.gameObject.tag == "pickaxe")
-        {
-            Debug.Log("Hit a breakable");
-            Breakable target = other.gameObject.GetComponent<Breakable>();
+    // private void OnCollisionEnter(Collision other)
+    // {
+    //     Debug.Log("We Collisioning");
+    //     if (other.gameObject.tag == "Pickaxe")
+    //     {
+    //         Debug.Log("Hit a breakable");
+    //         Breakable target = other.gameObject.GetComponent<Breakable>();
 
-            if (target != null)
-            {
-                target.Break(other.contacts[0].point);
-            }
-        }
-    }
+    //         if (target != null)
+    //         {
+    //             target.Break();
+    //         }
+    //     }
+    // }
 }

@@ -37,7 +37,7 @@ public class PickaxeContoller : MonoBehaviour
         else
         {
             animator.SetBool("isSwinging", false);
-            collider.enabled = false;
+            // collider.enabled = false;
             // tryingToCollide.enabled = false;
         }
     }
@@ -56,8 +56,17 @@ public class PickaxeContoller : MonoBehaviour
 
             if (target != null)
             {
-                target.Break(other.contacts[0].point);
+                target.Break();
             }
         }
+
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Touching the player");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        
     }
 }

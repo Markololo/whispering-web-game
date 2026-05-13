@@ -19,7 +19,7 @@ public class DoorController : MonoBehaviour
         // playerHasKey = playerController.hasKey;
         player = GameObject.FindWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
-        Debug.Log(player.name);
+        // Debug.Log(player.name);
     }
 
     // Update is called once per frame
