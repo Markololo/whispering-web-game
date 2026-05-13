@@ -56,7 +56,7 @@ public class PickaxeContoller : MonoBehaviour
 
             if (target != null)
             {
-                target.Break(other.contacts[0].point);
+                target.Break();
             }
         }
     }

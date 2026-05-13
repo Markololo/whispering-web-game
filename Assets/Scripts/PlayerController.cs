@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -137,14 +138,15 @@ public class PlayerController : MonoBehaviour
             // source.clip = destroyBox;
             // source.PlayOneShot(destroyBox);
             // other.gameObject.SetActive(false);
-            if (other.gameObject.tag == "Breakable")
+            if (Input.GetMouseButton(0) && pickaxe.activeSelf)
             {
                 Debug.Log("Hit a breakable");
                 Breakable target = other.gameObject.GetComponent<Breakable>();
 
                 if (target != null)
                 {
-                    target.Break(other.contacts[0].point);
+                    Debug.Log("Breaking");
+                    target.Break();
                 }
             }
             hasKey = true;
@@ -155,6 +157,11 @@ public class PlayerController : MonoBehaviour
 
             source.clip = doorClosed;
             source.PlayOneShot(doorClosed);
+
+        }
+
+        if (other.gameObject.tag == "Spider")
+        {
 
         }
     }

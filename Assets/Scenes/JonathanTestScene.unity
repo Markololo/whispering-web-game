@@ -352,14 +352,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65744826}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a69d4cb863fe4354abb2d9d44fc2f5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rulesText: {fileID: 0}
+  rulesText: {fileID: 1337183058}
   displayTime: 10
-  flashInterval: 0.5
+  fadeDuration: 2
 --- !u!4 &65744828
 Transform:
   m_ObjectHideFlags: 0
@@ -1558,6 +1558,7 @@ GameObject:
   - component: {fileID: 1236420078}
   - component: {fileID: 1236420077}
   - component: {fileID: 1236420079}
+  - component: {fileID: 1236420080}
   m_Layer: 0
   m_Name: Breakable
   m_TagString: Breakable
@@ -1618,6 +1619,27 @@ MonoBehaviour:
   upwardModifier: 1.5
   explosionRadius: 2
   chunkLifetime: 1
+--- !u!95 &1236420080
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236420076}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcf419433619cf04e8586b7ae668ccaf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1337183056
 GameObject:
   m_ObjectHideFlags: 0
