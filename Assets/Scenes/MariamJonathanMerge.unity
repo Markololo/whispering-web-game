@@ -465,8 +465,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: You just woke up in a cave and you need to run away from the spider! Search
-    for the pickax and the head light to get out! HURRY! Use pickups with 'F'.
+  m_Text: "You just woke up in a cave and you need to run away from the spider! Search
+    for the pickax and the head light to get out! HURRY! \nUse pickups with 'F'.\nRight-click
+    to axe-hit an object."
 --- !u!222 &341548743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1468,7 +1469,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 0}
-  playerController: {fileID: 0}
 --- !u!1 &1411385268
 GameObject:
   m_ObjectHideFlags: 0
