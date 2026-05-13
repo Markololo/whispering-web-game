@@ -562,8 +562,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: You just woke up in a cave and you need to run away from the spider! Search
-    for the pickax and the head light to get out! HURRY! Use pickups with 'F'.
+  m_Text: "You just woke up in a cave and you need to run away from the spider! Search
+    for the pickax and the head light to get out! HURRY! \nUse pickups with 'F'.\nRight-click
+    to axe-hit an object."
 --- !u!222 &341548743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1565,6 +1566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1001 &1287233859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1622,6 +1624,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea2b38e217f928d4fbb9ef233241a957, type: 3}
+=======
+>>>>>>> 80a592262f1dcbd552a41dd6e8dcefafd3cce89d
 --- !u!1 &1411385268
 GameObject:
   m_ObjectHideFlags: 0
