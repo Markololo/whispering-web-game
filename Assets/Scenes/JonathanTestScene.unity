@@ -352,12 +352,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65744826}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a69d4cb863fe4354abb2d9d44fc2f5d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rulesText: {fileID: 0}
+  rulesText: {fileID: 1337183058}
   displayTime: 10
   fadeDuration: 2
 --- !u!4 &65744828

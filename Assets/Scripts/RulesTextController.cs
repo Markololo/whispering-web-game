@@ -15,10 +15,11 @@ public class RulesTextController : MonoBehaviour
 
     IEnumerator ShowRules()
     {
-       
+
 
         yield return new WaitForSeconds(displayTime);
 
+        Debug.Log("Fading Text");
         Color originalColor = rulesText.color;
 
         float timer = 0f;
@@ -44,6 +45,6 @@ public class RulesTextController : MonoBehaviour
             originalColor.b,
             0f
         );
-    
+
     }
 }
