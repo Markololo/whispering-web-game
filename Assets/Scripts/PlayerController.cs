@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -144,7 +145,7 @@ public class PlayerController : MonoBehaviour
 
                 if (target != null)
                 {
-                    Debug.Log("Beaking");
+                    Debug.Log("Breaking");
                     target.Break();
                 }
             }
