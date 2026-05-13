@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -43,6 +45,9 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded =>
     Physics.Raycast(transform.position + Vector3.up * 0.01f, Vector3.down, groundCheckDistance, layerMask);
 
+    //* Game Over UI
+    private GameOverMenu gameOverUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +56,7 @@ public class PlayerController : MonoBehaviour
         pickaxe.SetActive(false);
         helmet.SetActive(false);
         hasKey = false;
+        gameOverUI = GetComponent<GameOverMenu>();
     }
 
     // Update is called once per frame
@@ -162,7 +168,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "Spider")
         {
-
+            // SceneManager.LoadScene("GameOver");
+            gameOverUI.GameOver();
         }
     }
 }
