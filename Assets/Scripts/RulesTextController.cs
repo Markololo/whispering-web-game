@@ -6,7 +6,7 @@ public class RulesTextController : MonoBehaviour
 {
     public Text rulesText;
     public float displayTime = 10f;
-    public float fadeDuration = 2f;
+    public float flashInterval = 0.5f;
 
     void Start()
     {
@@ -15,35 +15,16 @@ public class RulesTextController : MonoBehaviour
 
     IEnumerator ShowRules()
     {
-       
-
-        yield return new WaitForSeconds(displayTime);
-
-        Color originalColor = rulesText.color;
-
         float timer = 0f;
 
-        while (timer < fadeDuration)
+        while (timer < displayTime)
         {
-            float alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
+            rulesText.enabled = !rulesText.enabled;
 
-            rulesText.color = new Color(
-                originalColor.r,
-                originalColor.g,
-                originalColor.b,
-                alpha
-            );
-
-            timer += Time.deltaTime;
-            yield return null;
+            yield return new WaitForSeconds(flashInterval);
+            timer += flashInterval;
         }
 
-        rulesText.color = new Color(
-            originalColor.r,
-            originalColor.g,
-            originalColor.b,
-            0f
-        );
-    
+        rulesText.enabled = false;
     }
 }
