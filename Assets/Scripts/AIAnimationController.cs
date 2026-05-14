@@ -8,6 +8,25 @@ public class AIAnimationController : MonoBehaviour
     private SpiderController spiderController;
     private NavMeshAgent agent;
     private Animator animator;
+    private float attackTimer = 0f;
+    private float attackCooldown = 2f;
+
+public void Execute()
+{
+    // attackTimer += Time.deltaTime;
+
+    // if (!spiderController.IsPlayerInAttackRange())
+    // {
+    //     spiderController.StateMachine.TransitionToState(StateType.Chase);
+    //     return;
+    // }
+
+    // if (attackTimer >= attackCooldown)
+    // {
+    //     attackTimer = 0f;
+    //     spiderController.aiAnimationController.PlayAttack();
+    // }
+}
 
     void Awake()
     {
@@ -33,8 +52,15 @@ public class AIAnimationController : MonoBehaviour
     void HitPlayer() // Attack Animation Event to check if the player his hit
     {
         GameObject objectHit;
+        // animator.SetTrigger("attack");
         //Check collision with player here
     }
+    
+    public void PlayAttack()
+    {
+        animator.SetTrigger("attack");
+    }
+
     public void PlayIdle()
     {
         animator.SetFloat("speed", 0f);
@@ -44,4 +70,5 @@ public class AIAnimationController : MonoBehaviour
     {
         animator.SetFloat("speed", 1f);
     }
+
 }
