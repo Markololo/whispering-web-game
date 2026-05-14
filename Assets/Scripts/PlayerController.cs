@@ -148,10 +148,13 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Hit a breakable");
                 Breakable target = other.gameObject.GetComponent<Breakable>();
-
+                source.clip = axeHit;
+                 source.PlayOneShot(axeHit);
                 if (target != null)
                 {
                     Debug.Log("Breaking");
+                     source.clip = destroyBox;
+                    source.PlayOneShot(destroyBox);
                     target.Break();
                 }
             }
