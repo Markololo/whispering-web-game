@@ -3934,6 +3934,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1463496441905754810, guid: 4900cdf6f4357a046a10724af8c44b02, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a35bce2127bd5094599ca80e4d47c14a, type: 3}
     - target: {fileID: 5160270253185372124, guid: 4900cdf6f4357a046a10724af8c44b02, type: 3}
       propertyPath: gameOverUI
       value: 
