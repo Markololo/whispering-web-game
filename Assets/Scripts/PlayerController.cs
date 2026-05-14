@@ -81,9 +81,17 @@ public class PlayerController : MonoBehaviour
     //* Unity Input System functions
     public void OnMove(InputAction.CallbackContext context)
     {
-        source.clip = footsteps;
-        source.Play();
+        //source.clip = footsteps;
+        //source.PlayOneShot(footsteps); //keeps playing even if the player is not moving
         moveValue = context.ReadValue<Vector2>();
+        while(moveValue != Vector2.zero && IsGrounded)
+        {
+            if (!source.isPlaying)
+            {
+                source.clip = footsteps;
+                source.Play();
+            }
+        }
         //Debug.Log($"Move input = {moveValue}");
     }
 
@@ -147,9 +155,10 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButton(0) && pickaxe.activeSelf)
             {
                 Debug.Log("Hit a breakable");
-                Breakable target = other.gameObject.GetComponent<Breakable>();
                 source.clip = axeHit;
-                 source.PlayOneShot(axeHit);
+                source.PlayOneShot(axeHit);
+                Breakable target = other.gameObject.GetComponent<Breakable>();
+                
                 if (target != null)
                 {
                     Debug.Log("Breaking");
