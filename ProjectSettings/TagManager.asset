@@ -10,6 +10,7 @@ TagManager:
   - Door
   - Walls
   - Breakable
+  - Spider
   layers:
   - Default
   - TransparentFX
