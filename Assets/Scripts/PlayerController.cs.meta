@@ -5,10 +5,16 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - pickaxe: {instanceID: 0}
-  - PickaxeAnimator: {instanceID: 0}
   - helmet: {instanceID: 0}
-  - DoorAnimator: {instanceID: 0}
   - footsteps: {fileID: 8300000, guid: 682874d59be777e448d576b6bc273a7e, type: 3}
+  - jump: {fileID: 8300000, guid: c0d82f78b3ce17341940b3188fe9ce86, type: 3}
+  - pickAxe: {fileID: 8300000, guid: 86681c80043aa0143a22998023474cc8, type: 3}
+  - axeHit: {fileID: 8300000, guid: f6ab271fb8354a34eb0a623998a4c675, type: 3}
+  - pickHelmet: {fileID: 8300000, guid: 789c1f3f5cadbb54aaddc4b09147254d, type: 3}
+  - pickKey: {fileID: 8300000, guid: 9e7357d8a0abb114e8cf819ae771df78, type: 3}
+  - destroyBox: {fileID: 8300000, guid: 60683e3e89e97fe4094d68b8d2dc23e5, type: 3}
+  - openDoor: {fileID: 8300000, guid: 4671395b1d3af9d49880d410f69a1f39, type: 3}
+  - doorClosed: {fileID: 8300000, guid: 497248e13da4f5146bca4d2ad96a4a82, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -138,6 +138,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "Breakable")
         {
+            Debug.Log("Hit a breakable");
             // PickaxeAnimator.SetTrigger("Swing");
             // source.clip = axeHit;
             // source.PlayOneShot(axeHit);
@@ -146,12 +147,17 @@ public class PlayerController : MonoBehaviour
             // other.gameObject.SetActive(false);
             if (Input.GetMouseButton(0) && pickaxe.activeSelf)
             {
-                Debug.Log("Hit a breakable");
+                Debug.Log("Hit a breakable with axe");
                 Breakable target = other.gameObject.GetComponent<Breakable>();
+                source.clip = axeHit;
+                source.PlayOneShot(axeHit);
+                
 
                 if (target != null)
                 {
                     Debug.Log("Breaking");
+                    //source.clip = destroyBox;
+                    //source.PlayOneShot(destroyBox);
                     target.Break();
                 }
             }
