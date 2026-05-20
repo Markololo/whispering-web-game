@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpiderController : MonoBehaviour
 {
 
-    public StateMachine StateMachine {  get; private set; }
+    public StateMachine StateMachine { get; private set; }
     public UnityEngine.AI.NavMeshAgent Agent { get; private set; }
     public AIAnimationController aiAnimationController { get; private set; }
 
@@ -17,16 +17,19 @@ public class SpiderController : MonoBehaviour
     public StateType currentState;
 
     //Vision Settings
-    public float viewDistance = 10f;
+    public float viewDistance = 8f;
     public float viewAngle = 180f;
     public float eyeHeight = 1.0f;
     public LayerMask obstacleMask;
     public LayerMask playerMask;
+    public LayerMask baitMask;
+    public Transform nearestBait = null;
 
     public float visionPersistence = 0.5f;
     private float lastSeenTime = -999f;
 
     private AudioSource source;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +42,7 @@ public class SpiderController : MonoBehaviour
         StateMachine.AddState(new PatrolState(this));
         StateMachine.AddState(new ChaseState(this));
         StateMachine.AddState(new AttackState(this));
+        StateMachine.AddState(new DistractedState(this));
 
         StateMachine.TransitionToState(StateType.Idle);
     }
@@ -49,6 +53,7 @@ public class SpiderController : MonoBehaviour
         StateMachine.Update();
         currentState = StateMachine.GetCurrentStateType();
     }
+
     public AudioClip spiderPresence;
     public bool CanSeePlayer()
     {
@@ -96,11 +101,36 @@ public class SpiderController : MonoBehaviour
         }
         return recentlySeen;
     }
+
+    public bool CanSeeBait()
+    {
+        // Debug.Log("Checking for bait");
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, viewDistance, baitMask);
+
+        Debug.Log(Physics.OverlapSphere(transform.position, viewDistance, baitMask));
+        float minDistance = Mathf.Infinity;
+
+        foreach (var hitCollider in hitColliders)
+        {
+            Debug.Log("Checking hitcollider");
+            float distance = Vector3.Distance(transform.position, hitCollider.transform.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                nearestBait = hitCollider.transform;
+                Debug.Log("Spider sees bait");
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public AudioClip spiderAttack;
     public bool IsPlayerInAttackRange()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
-        if(distanceToPlayer <= AttackRange)
+        if (distanceToPlayer <= AttackRange)
         {
             source.clip = spiderAttack;
             source.PlayOneShot(spiderAttack);
@@ -119,6 +149,16 @@ public class SpiderController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + leftBoundary * viewDistance);
         Gizmos.DrawLine(transform.position, transform.position + rightBoundary * viewDistance);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Bait")
+        {
+            // other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
+            nearestBait = null;
+        }
     }
 
 }

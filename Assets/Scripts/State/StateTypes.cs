@@ -8,5 +8,6 @@ public enum StateType
     Patrol,
     Chase,
     Attack,
-    Search
+    Search,
+    Distracted
 }
