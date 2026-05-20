@@ -107,18 +107,18 @@ public class SpiderController : MonoBehaviour
         // Debug.Log("Checking for bait");
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, viewDistance, baitMask);
 
-        Debug.Log(Physics.OverlapSphere(transform.position, viewDistance, baitMask));
+        // Debug.Log(Physics.OverlapSphere(transform.position, viewDistance, baitMask));
         float minDistance = Mathf.Infinity;
 
         foreach (var hitCollider in hitColliders)
         {
-            Debug.Log("Checking hitcollider");
+            // Debug.Log("Checking hitcollider");
             float distance = Vector3.Distance(transform.position, hitCollider.transform.position);
             if (distance < minDistance)
             {
                 minDistance = distance;
                 nearestBait = hitCollider.transform;
-                Debug.Log("Spider sees bait");
+                // Debug.Log("Spider sees bait");
                 return true;
             }
         }
