@@ -161,7 +161,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   currentState: 0
-  viewDistance: 10
+  viewDistance: 20
   viewAngle: 180
   eyeHeight: 1
   obstacleMask:
@@ -170,6 +170,10 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 0
+  baitMask:
+    serializedVersion: 2
+    m_Bits: 0
+  nearestBait: {fileID: 0}
   visionPersistence: 0.5
   spiderPresence: {fileID: 0}
   spiderAttack: {fileID: 0}
