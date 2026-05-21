@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Data;
 
 public class PatrolState : IState
 {
@@ -30,6 +31,12 @@ public class PatrolState : IState
         if (spiderController.CanSeePlayer())
         {
             spiderController.StateMachine.TransitionToState(StateType.Chase);
+            return;
+        }
+
+        if (spiderController.CanSeeBait())
+        {
+            spiderController.StateMachine.TransitionToState(StateType.Distracted);
             return;
         }
 
