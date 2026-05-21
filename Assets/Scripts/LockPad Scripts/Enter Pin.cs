@@ -7,10 +7,13 @@ public class EnterPin : MonoBehaviour
 {
     public string pinCode; // i put it public so you guys can change it whenever but if it messes with the build we can make it private;
     public Text pinEntered;
+    private AudioSource source;
+    public AudioClip wrongPin;
+    public AudioClip rightPin;
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
     }
     public void CheckPinMatch()
     {
@@ -19,17 +22,18 @@ public class EnterPin : MonoBehaviour
         if(inputEntered.Length != pinCode.Length)
         {
             Debug.Log("Pin does not match. Try again.");
-          
+            source.PlayOneShot(wrongPin);
+
         }
         if (inputEntered == pinCode)
         {
             Debug.Log("Pin Matched!");
-          
+          source.PlayOneShot(rightPin);
         }
         else
         {
             Debug.Log("Pin does not match. Try again.");
-           
+           source.PlayOneShot(wrongPin);
         }
     }
 

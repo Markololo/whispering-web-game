@@ -17,8 +17,8 @@ public class InputNumber : MonoBehaviour
     public void InputPinNumber(int number)
     {
         
-        inputNumber = inputNumber * 10 + number;
-        string stringNumber = inputNumber.ToString();
+        //inputNumber = inputNumber * 10 + number;
+        string stringNumber = number.ToString();
         pinText.text += stringNumber;
         if(pinText.text.Length > 4)
         {
