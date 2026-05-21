@@ -1,6 +1,4 @@
-
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Breakable : MonoBehaviour
@@ -10,53 +8,69 @@ public class Breakable : MonoBehaviour
     public float explosionRadius = 2f;
     public float chunkLifetime = 1.0f;
 
+    public Light glowLight;
+
+    public float normalLightIntensity = 1f;
+    public float boomLightMin = 6f;
+    public float boomLightMax = 10f;
+
+    public float shakeDuration = 0.5f;
+    public float shakeAmount = 0.08f;
+
     private bool broken = false;
+    private Vector3 originalPosition;
+
+    private void Start()
+    {
+        originalPosition = transform.position;
+
+        if (glowLight != null)
+        {
+            glowLight.intensity = normalLightIntensity;
+        }
+    }
 
     public void Break()
     {
-        // if (broken) return;
-        // broken = true;
-        // // we find this to
-        // Vector3 explosionOrigin = transform.position - hitPosition.normalized * 0.5f;
+        if (broken) return;
+        broken = true;
 
-        // foreach (Transform child in transform)
-        // {
-        //     Rigidbody rb = child.GetComponent<Rigidbody>();
-        //     if (rb == null) continue;
+        StartCoroutine(BreakSequence());
+    }
 
-        //     child.SetParent(null);
-        //     rb.isKinematic = false;
-        //     rb.AddExplosionForce(explosionForce, explosionOrigin, explosionRadius, upwardModifier, ForceMode.Impulse);
-
-
-        //     if (chunkLifetime > 0f)
-        //         Destroy(child.gameObject, chunkLifetime);
-        // }
+    IEnumerator BreakSequence()
+    {
         Animator animator = GetComponent<Animator>();
 
-        animator.SetTrigger("Break");
+        if (animator != null)
+        {
+            animator.SetTrigger("Break");
+        }
 
-        StartCoroutine(DelayedCall(1.5f));
-    }
+        float elapsed = 0f;
 
-    IEnumerator DelayedCall(float time)
-    {
-        yield return new WaitForSeconds(time);
+        while (elapsed < shakeDuration)
+        {
+            transform.position = originalPosition + Random.insideUnitSphere * shakeAmount;
+
+            if (glowLight != null)
+            {
+                glowLight.intensity = Random.Range(boomLightMin, boomLightMax);
+            }
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = originalPosition;
+
+        if (glowLight != null)
+        {
+            glowLight.intensity = boomLightMax;
+        }
+
+        yield return new WaitForSeconds(1f);
+
         Destroy(gameObject);
     }
-
-    // private void OnCollisionEnter(Collision other)
-    // {
-    //     Debug.Log("We Collisioning");
-    //     if (other.gameObject.tag == "Pickaxe")
-    //     {
-    //         Debug.Log("Hit a breakable");
-    //         Breakable target = other.gameObject.GetComponent<Breakable>();
-
-    //         if (target != null)
-    //         {
-    //             target.Break();
-    //         }
-    //     }
-    // }
 }
