@@ -1,74 +1,76 @@
+using System.Collections;
 using UnityEngine;
 
 public class Breakable : MonoBehaviour
 {
-    public ParticleSystem breakParticles;
+    public float explosionForce = 400f;
+    public float upwardModifier = 1.5f;
+    public float explosionRadius = 2f;
+    public float chunkLifetime = 1.0f;
+
+    public Light glowLight;
+
+    public float normalLightIntensity = 1f;
+    public float boomLightMin = 6f;
+    public float boomLightMax = 10f;
+
+    public float shakeDuration = 0.5f;
+    public float shakeAmount = 0.08f;
+
     private bool broken = false;
+    private Vector3 originalPosition;
+
+    private void Start()
+    {
+        originalPosition = transform.position;
+
+        if (glowLight != null)
+        {
+            glowLight.intensity = normalLightIntensity;
+        }
+    }
 
     public void Break()
     {
         if (broken) return;
         broken = true;
 
-        if (breakParticles != null)
+        StartCoroutine(BreakSequence());
+    }
+
+    IEnumerator BreakSequence()
+    {
+        Animator animator = GetComponent<Animator>();
+
+        if (animator != null)
         {
-            breakParticles.transform.parent = null;
-            breakParticles.Play();
-            Destroy(breakParticles.gameObject, 2f);
+            animator.SetTrigger("Break");
         }
+
+        float elapsed = 0f;
+
+        while (elapsed < shakeDuration)
+        {
+            transform.position = originalPosition + Random.insideUnitSphere * shakeAmount;
+
+            if (glowLight != null)
+            {
+                glowLight.intensity = Random.Range(boomLightMin, boomLightMax);
+            }
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = originalPosition;
+
+        if (glowLight != null)
+        {
+            glowLight.intensity = boomLightMax;
+        }
+
+        yield return new WaitForSeconds(1f);
 
         Destroy(gameObject);
     }
 }
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-
-// public class Breakable : MonoBehaviour
-// {
-//     public float explosionForce = 400f;
-//     public float upwardModifier = 1.5f;
-//     public float explosionRadius = 2f;
-//     public float chunkLifetime = 1.0f;
-
-//     private bool broken = false;
-
-//     public void Break(Vector3 hitPosition)
-//     {
-//         if (broken) return;
-//         broken = true;
-//         // we find this to
-//         Vector3 explosionOrigin = transform.position - hitPosition.normalized * 0.5f;
-
-//         foreach (Transform child in transform)
-//         {
-//             Rigidbody rb = child.GetComponent<Rigidbody>();
-//             if (rb == null) continue;
-
-//             child.SetParent(null);
-//             rb.isKinematic = false;
-//             rb.AddExplosionForce(explosionForce, explosionOrigin, explosionRadius, upwardModifier, ForceMode.Impulse);
-
-
-//             if (chunkLifetime > 0f)
-//                 Destroy(child.gameObject, chunkLifetime);
-//         }
-
-//         Destroy(gameObject);
-//     }
-
-    // private void OnCollisionEnter(Collision other)
-    // {
-    //     Debug.Log("We Collisioning");
-    //     if (other.gameObject.tag == "pickaxe")
-    //     {
-    //         Debug.Log("Hit a breakable");
-    //         Breakable target = other.gameObject.GetComponent<Breakable>();
-
-    //         if (target != null)
-    //         {
-    //             target.Break(other.contacts[0].point);
-    //         }
-    //     }
-    // }
-//}
