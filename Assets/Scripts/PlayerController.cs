@@ -215,8 +215,9 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "Spider")
         {
+            StartCoroutine(DelayedGameOver(3f)); // wait 3 secs to see the attack at least
             // SceneManager.LoadScene("GameOver");
-            gameOverUI.GameOver();
+            // gameOverUI.GameOver();
         }
 
         if (other.gameObject.tag == "Bait")
@@ -224,5 +225,12 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             baitAmount++;
         }
+    }
+
+    //coroutine to wait a few secs before dying to see spider attack anim
+    private IEnumerator DelayedGameOver(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameOverUI.GameOver();
     }
 }
