@@ -2912,12 +2912,20 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 7ed0834a0e4f13f43935ec633f81cd07, type: 3}
     - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
       propertyPath: viewDistance
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
       propertyPath: spiderPresence
       value: 
       objectReference: {fileID: 8300000, guid: aebabe3b2139bed489c2fa7e27df2516, type: 3}
+    - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
+      propertyPath: baitMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
+      propertyPath: playerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1355090087780484127, guid: 05169aa4defbe44489ab5efac70f8f72, type: 3}
       propertyPath: Waypoints.Array.size
       value: 4
