@@ -1,44 +1,66 @@
+using System.Collections;
 using UnityEngine;
 
 public class WallBreakTrigger : MonoBehaviour
 {
-    // will change the hits to break to use the pickaxe
-
     public int hitsToBreak = 3;
     public string wallRocksFolderName = "wall-rocks";
-    private int hitCount = 0;
+    public AudioClip hitSound;
+    public AudioClip breakSound;
 
-    private void OnTriggerEnter(Collider other)
+    private int hitCount = 0;
+    private bool broken = false;
+    private AudioSource source;
+
+    private void Start()
     {
-        if (!other.CompareTag("Player")) return;
+        source = GetComponent<AudioSource>();
+    }
+
+    //Called by PickaxeContoller from the tag Breakable
+    public void Break()
+    {
+        if (broken) return;
 
         hitCount++;
-        // Debug.Log($"Wall hit {hitCount}/{hitsToBreak}");
+        Debug.Log($"Wall hit {hitCount}/{hitsToBreak}");
+
+        if (source != null && hitSound != null)
+            source.PlayOneShot(hitSound);
 
         if (hitCount >= hitsToBreak)
+        {
+            broken = true;
             BreakWall();
+        }
     }
 
     private void BreakWall()
     {
-        //find the wall-rocks parent 
         GameObject wallRocksFolder = GameObject.Find(wallRocksFolderName);
 
         if (wallRocksFolder != null)
         {
-            //un-kinematic every rock in the folder so they fall
             foreach (Rigidbody rb in wallRocksFolder.GetComponentsInChildren<Rigidbody>())
-            {
                 rb.isKinematic = false;
-            }
+
+            //cleanup
             WallRocksFader fader = wallRocksFolder.GetComponent<WallRocksFader>();
             if (fader != null) fader.ScheduleCleanup();
         }
         else
         {
-            Debug.LogWarning($"Could not find GameObject '{wallRocksFolderName}'");
+            Debug.LogWarning($"Could not find GameObject named '{wallRocksFolderName}'");
         }
 
-        Destroy(gameObject);
+        if (source != null && breakSound != null)
+        {
+            source.PlayOneShot(breakSound);
+            Destroy(gameObject, breakSound.length); //wait for sound to finish
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
