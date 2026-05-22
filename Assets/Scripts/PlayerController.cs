@@ -90,13 +90,16 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(1))
         {
-            baitAmount--;
-
-            if (baitAmount < 0)
+            if (baitAmount > 0)
             {
-                baitAmount = 0;
+                baitAmount--;
+
+                if (baitAmount < 0)
+                {
+                    baitAmount = 0;
+                }
+                ThrowBait();
             }
-            ThrowBait();
         }
 
         if (baitAmount > 0)
