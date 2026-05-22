@@ -29,6 +29,14 @@ public class PlayerController : MonoBehaviour
     public bool hasPickAxe { get; set; }
     public bool hasHelmet { get; set; }
 
+
+    //* Bait stuff
+    public GameObject baitPrefab;
+    public Transform baitSpawnPoint;
+    public float baitMaxImpulse = 10.0f;
+    public int baitAmount;
+    public GameObject heldBait;
+
     // public Animator DoorAnimator;
 
     public LayerMask layerMask;
@@ -57,6 +65,7 @@ public class PlayerController : MonoBehaviour
         helmet.SetActive(false);
         hasKey = false;
         gameOverUI = GetComponent<GameOverMenu>();
+        baitAmount = 0;
     }
 
     // Update is called once per frame
@@ -76,6 +85,44 @@ public class PlayerController : MonoBehaviour
         yRotation += mouseX;
         transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
         rb.transform.Rotate(Vector3.up * mouseX);
+
+
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            if (baitAmount > 0)
+            {
+                baitAmount--;
+
+                if (baitAmount < 0)
+                {
+                    baitAmount = 0;
+                }
+                ThrowBait();
+            }
+        }
+
+        if (baitAmount > 0)
+        {
+            heldBait.SetActive(true);
+        }
+        else
+        {
+            heldBait.SetActive(false);
+        }
+    }
+
+    void ThrowBait()
+    {
+        GameObject bait = Instantiate(baitPrefab, baitSpawnPoint.position, baitSpawnPoint.rotation);
+        Rigidbody rb = bait.GetComponent<Rigidbody>();
+
+        float baitImpulse = baitMaxImpulse;
+
+        Debug.Log($"Throwing ${baitImpulse}");
+
+        // An Impulse is a force you apply on a object in a single instant. 
+        rb.AddForce(baitSpawnPoint.forward * baitImpulse, ForceMode.Impulse);
     }
 
     //* Unity Input System functions
@@ -170,6 +217,12 @@ public class PlayerController : MonoBehaviour
         {
             // SceneManager.LoadScene("GameOver");
             gameOverUI.GameOver();
+        }
+
+        if (other.gameObject.tag == "Bait")
+        {
+            Destroy(other.gameObject);
+            baitAmount++;
         }
     }
 }
