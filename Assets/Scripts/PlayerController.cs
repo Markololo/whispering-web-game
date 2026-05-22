@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     public Transform baitSpawnPoint;
     public float baitMaxImpulse = 10.0f;
     public int baitAmount;
+    public GameObject heldBait;
 
     // public Animator DoorAnimator;
 
@@ -85,10 +86,7 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
         rb.transform.Rotate(Vector3.up * mouseX);
 
-        //*
-        if (Input.GetMouseButtonDown(1))
-        {
-        }
+
 
         if (Input.GetMouseButtonUp(1))
         {
@@ -99,6 +97,15 @@ public class PlayerController : MonoBehaviour
                 baitAmount = 0;
             }
             ThrowBait();
+        }
+
+        if (baitAmount > 0)
+        {
+            heldBait.SetActive(true);
+        }
+        else
+        {
+            heldBait.SetActive(false);
         }
     }
 
