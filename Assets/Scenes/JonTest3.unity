@@ -3478,6 +3478,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3486106074936897606, guid: c237fdf8e794bd14080727cc1743f7d5, type: 3}
+      propertyPath: m_Text
+      value: "Choose the door where the \nhands form a long straighter line.\nRight:
+        3:30\nLeft: 6:00"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585962675032890176, guid: c237fdf8e794bd14080727cc1743f7d5, type: 3}
+      propertyPath: m_Text
+      value: "\u201CI arrive once in a minute, \ntwice in a moment, \nbut never in
+        a thousand years.\u201D\nRight: Mr. B\nLeft: Mr. M"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245619281973955372, guid: c237fdf8e794bd14080727cc1743f7d5, type: 3}
+      propertyPath: m_Text
+      value: "\u201CAll roads lead to _______.\u201D\nRight: Paris\nLeft: Rome"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
