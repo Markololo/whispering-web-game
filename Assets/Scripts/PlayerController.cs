@@ -61,8 +61,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         source = GetComponent<AudioSource>();
-        pickaxe.SetActive(false);
-        helmet.SetActive(false);
+        // pickaxe.SetActive(false);
+        // helmet.SetActive(false);
         hasKey = false;
         gameOverUI = GetComponent<GameOverMenu>();
         baitAmount = 0;
