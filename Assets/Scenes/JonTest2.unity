@@ -4969,7 +4969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c3575d46f747447aefad0b98f258f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 0}
+  gameOverUI: {fileID: 921193743}
 --- !u!114 &1427681136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6204,7 +6204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitsToBreak: 3
-  wallRocksFolderName: wall-rocks
+  wallRocksFolder: {fileID: 0}
   hitSound: {fileID: 8300000, guid: 598da93a56eae8c4794438a2a021d381, type: 3}
   breakSound: {fileID: 8300000, guid: 4ee39a255769a1e4b907e850faa835c8, type: 3}
 --- !u!65 &1642480730
@@ -6353,6 +6353,10 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 1341305251}
+    - target: {fileID: 6524697930826947154, guid: 32503abe3cdc3894eb69a21f210ba8d2, type: 3}
+      propertyPath: openDoor
+      value: 
+      objectReference: {fileID: 8300000, guid: 4671395b1d3af9d49880d410f69a1f39, type: 3}
     - target: {fileID: 8290406143804704469, guid: 32503abe3cdc3894eb69a21f210ba8d2, type: 3}
       propertyPath: m_Name
       value: KeyPad

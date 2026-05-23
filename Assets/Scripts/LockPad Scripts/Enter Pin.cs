@@ -10,6 +10,7 @@ public class EnterPin : MonoBehaviour
     private AudioSource source;
     public AudioClip wrongPin;
     public AudioClip rightPin;
+    public AudioClip openDoor;
 
     public GameObject door;
     public Animator doorAnimator;
@@ -35,6 +36,7 @@ public class EnterPin : MonoBehaviour
         {
             Debug.Log("Pin Matched!");
             doorAnimator.SetTrigger("Open");
+            source.PlayOneShot(openDoor);
             source.PlayOneShot(rightPin);
         }
         else

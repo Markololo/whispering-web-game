@@ -2175,6 +2175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 1212850291}
+  openDoor: {fileID: 8300000, guid: 4671395b1d3af9d49880d410f69a1f39, type: 3}
 --- !u!1 &1236420076
 GameObject:
   m_ObjectHideFlags: 0
