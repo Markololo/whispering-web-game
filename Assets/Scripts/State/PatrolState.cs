@@ -63,8 +63,7 @@ public class PatrolState : IState
         isWaiting = true;
         spiderController.Agent.isStopped = true;
 
-        // Wait for animation duration (1.5 sec here, adjust to your animation length)
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
 
         spiderController.Agent.isStopped = false;
         MoveToNextWaypoint();
