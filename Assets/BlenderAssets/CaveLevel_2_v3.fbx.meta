@@ -3,7 +3,37 @@ guid: ce8b46ca316049b4ab39fa294f3eb551
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rock_face_03_diff_4k
+    second: {fileID: 2800000, guid: fff949f505dac8847b6d67ca558b9927, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rock_face_03_nor_gl_4k
+    second: {fileID: 2800000, guid: 2a5f79dbf416c814482a2fe7253aa2ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rock_face_03_rough_4k
+    second: {fileID: 2800000, guid: af88a5ee9409be44b93f6b9f4fe61f0d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rocks_ground_06_diff_4k
+    second: {fileID: 2800000, guid: 7693e7df300f5fa488b4718ae76a1bc7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rocks_ground_06_nor_gl_4k
+    second: {fileID: 2800000, guid: 711725453260f0148a5ec26c74c6011e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rocks_ground_06_rough_4k
+    second: {fileID: 2800000, guid: ef5f9278a75882148bc19ca4ad0e9ad0, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
