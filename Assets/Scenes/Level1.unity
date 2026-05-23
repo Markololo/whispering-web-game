@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
+  m_FogColor: {r: 0.1882353, g: 0.1882353, b: 0.1882353, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.02
   m_LinearFogStart: 0
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 4c0a91331a370b044ac230302e927240, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 8d91f632919e1c94f82d9fb877b32163, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &255570096
 PrefabInstance:
