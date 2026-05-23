@@ -6184,6 +6184,7 @@ GameObject:
   - component: {fileID: 1642480731}
   - component: {fileID: 1642480730}
   - component: {fileID: 1642480729}
+  - component: {fileID: 1642480734}
   m_Layer: 0
   m_Name: wall-break-trigger
   m_TagString: Breakable
@@ -6204,7 +6205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitsToBreak: 3
-  wallRocksFolder: {fileID: 0}
+  wallRocksFolder: {fileID: 1276502571}
   hitSound: {fileID: 8300000, guid: 598da93a56eae8c4794438a2a021d381, type: 3}
   breakSound: {fileID: 8300000, guid: 4ee39a255769a1e4b907e850faa835c8, type: 3}
 --- !u!65 &1642480730
@@ -6293,6 +6294,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 79.698}
+--- !u!114 &1642480734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642480728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dcece6a15b3e1f49a0baa2e17f02e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionForce: 400
+  upwardModifier: 1.5
+  explosionRadius: 2
+  chunkLifetime: 1
+  glowLight: {fileID: 0}
+  normalLightIntensity: 1
+  boomLightMin: 6
+  boomLightMax: 10
+  shakeDuration: 0.5
+  shakeAmount: 0.08
 --- !u!1001 &1700918550
 PrefabInstance:
   m_ObjectHideFlags: 0
