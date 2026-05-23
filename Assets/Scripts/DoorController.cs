@@ -7,6 +7,10 @@ public class DoorController : MonoBehaviour
 {
     // public GameObject player;
     public Animator doorAnimator;
+    public AudioClip openDoor;
+    private AudioSource source;
+
+
 
     // public PlayerController playerController;
     private GameObject player;
@@ -19,7 +23,9 @@ public class DoorController : MonoBehaviour
         // playerHasKey = playerController.hasKey;
         player = GameObject.FindWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
-        Debug.Log(player.name);
+        // Debug.Log(player.name);
+        source = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -62,8 +68,8 @@ public class DoorController : MonoBehaviour
             if (playerHasKey)
             {
                 doorAnimator.SetTrigger("Open");
-                // source.clip = openDoor;
-                // source.PlayOneShot(openDoor);
+                source.clip = openDoor;
+                source.PlayOneShot(openDoor);
                 playerHasKey = false;
                 //play open door sound here
             }

@@ -1447,6 +1447,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 66894388564111074, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 66894388564111074, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
       propertyPath: m_TagString
       value: Pickaxe
       objectReference: {fileID: 0}
@@ -1525,6 +1529,10 @@ PrefabInstance:
     - target: {fileID: 4169067031593557243, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
       propertyPath: m_Center.y
       value: 20.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449926667124279603, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4901550003865077798, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1609,6 +1617,10 @@ PrefabInstance:
     - target: {fileID: 8031892254331471669, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
       propertyPath: m_Name
       value: PlayerV3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962965714948280330, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8962965714948280330, guid: 8f6c82439dd866746be17ee0392a97bb, type: 3}
       propertyPath: m_TagString
@@ -2163,6 +2175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 1212850291}
+  openDoor: {fileID: 8300000, guid: 4671395b1d3af9d49880d410f69a1f39, type: 3}
 --- !u!1 &1236420076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,6 +2248,12 @@ MonoBehaviour:
   upwardModifier: 1.5
   explosionRadius: 2
   chunkLifetime: 1
+  glowLight: {fileID: 0}
+  normalLightIntensity: 1
+  boomLightMin: 6
+  boomLightMax: 10
+  shakeDuration: 0.5
+  shakeAmount: 0.08
 --- !u!95 &1236420080
 Animator:
   serializedVersion: 5
