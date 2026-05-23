@@ -17,6 +17,7 @@ public class SpiderController : MonoBehaviour
     public StateType currentState;
 
     //Vision Settings
+    public float idleDuration = 5f;
     public float viewDistance = 8f;
     public float viewAngle = 180f;
     public float eyeHeight = 1.0f;
@@ -24,6 +25,7 @@ public class SpiderController : MonoBehaviour
     public LayerMask playerMask;
     public LayerMask baitMask;
     public Transform nearestBait = null;
+
 
     public float visionPersistence = 0.5f;
     private float lastSeenTime = -999f;

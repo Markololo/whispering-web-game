@@ -5,7 +5,7 @@ using UnityEngine;
 public class IdlseState : IState
 {
     private SpiderController spiderController;
-    public float idleDuration = 5f;
+    public float idleDuration;
     private float idleTimer;
 
     public StateType Type => StateType.Idle;
@@ -17,9 +17,10 @@ public class IdlseState : IState
 
     public void Enter()
     {
-        idleTimer = 0f;
+        // idleTimer = 0f;
         //aiController.Animator.SetBool("isMoving", false);
         spiderController.Agent.isStopped = true;
+        idleDuration = spiderController.idleDuration;
     }
 
     public void Execute()
