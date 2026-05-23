@@ -8,47 +8,47 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: rock_face_03_diff_4k
-    second: {fileID: 2800000, guid: 213160047d4458c459d9662f2c9d1b03, type: 3}
+    second: {fileID: 2800000, guid: 1dbc4c00140490945be2c86cc80d26ea, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: rock_face_03_nor_gl_4k
-    second: {fileID: 2800000, guid: 88d71c95ffefae0438fa495c9b246c1d, type: 3}
+    second: {fileID: 2800000, guid: 27108bfbb0e75804b8951c984abc973c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: rock_face_03_rough_4k
-    second: {fileID: 2800000, guid: fe5a2ccf8a768a144af64b4ea876969b, type: 3}
+    second: {fileID: 2800000, guid: 6e5c27de4cbc02141abbcf4eeca29b35, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: rocks_ground_06_diff_4k
-    second: {fileID: 2800000, guid: 8ae62e1e4264f45488a16c17a2b19534, type: 3}
+    second: {fileID: 2800000, guid: 0ec911c21a87b8041836bd27d13230b7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: rocks_ground_06_nor_gl_4k
-    second: {fileID: 2800000, guid: b3650b29ac341994881fc5348f943838, type: 3}
+    second: {fileID: 2800000, guid: 87daf76b6980f6e44a43906a498f8f64, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: rocks_ground_06_rough_4k
-    second: {fileID: 2800000, guid: 9ee8e5be8b55dcd4682b2f8956706432, type: 3}
+    second: {fileID: 2800000, guid: aa0d49dd1231b9e41aa00ef8a1b9cd2a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: root_cluster_01_diff_4k
-    second: {fileID: 2800000, guid: 2aa8ec9e7c9ef44449fe907df8ff0440, type: 3}
+    second: {fileID: 2800000, guid: aeb35254111fc43408b69617ad3390ec, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: root_cluster_01_nor_gl_4k
-    second: {fileID: 2800000, guid: f4bfe75d36896a949a7fece92bc5afe0, type: 3}
+    second: {fileID: 2800000, guid: 8f7baea09b5067747bd28185fb75d367, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: root_cluster_01_rough_4k
-    second: {fileID: 2800000, guid: 6a5bc4e70e16ed944a34b2e301ead210, type: 3}
+    second: {fileID: 2800000, guid: 554050c45396d9e498c1181182dae511, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

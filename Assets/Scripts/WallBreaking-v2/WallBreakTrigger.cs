@@ -4,7 +4,8 @@ using UnityEngine;
 public class WallBreakTrigger : MonoBehaviour
 {
     public int hitsToBreak = 3;
-    public string wallRocksFolderName = "wall-rocks";
+    // public string wallRocksFolderName = "wall-rocks";
+    public GameObject wallRocksFolder;
     public AudioClip hitSound;
     public AudioClip breakSound;
 
@@ -37,7 +38,7 @@ public class WallBreakTrigger : MonoBehaviour
 
     private void BreakWall()
     {
-        GameObject wallRocksFolder = GameObject.Find(wallRocksFolderName);
+        // GameObject wallRocksFolder = GameObject.Find(wallRocksFolderName);
 
         if (wallRocksFolder != null)
         {
@@ -50,7 +51,7 @@ public class WallBreakTrigger : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Could not find GameObject named '{wallRocksFolderName}'");
+            Debug.LogWarning("No wall rocks folder assigned!");
         }
 
         if (source != null && breakSound != null)
